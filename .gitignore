@@ -4,3 +4,18 @@ composer.phar
 # Commit your application's lock file https://getcomposer.org/doc/01-basic-usage.md#commit-your-composer-lock-file-to-version-control
 # You may choose to ignore a library lock file http://getcomposer.org/doc/02-libraries.md#lock-file
 # composer.lock
+/nbproject/private/
+/.env
+/nbproject/
+/.build/
+/.vscode/
+/doc/
+/debian/.debhelper/
+/debian/pohoda-realpad/
+/debian/pohoda-realpad.substvars
+/debian/debhelper-build-stamp
+/debian/files
+/debian/multiflexi-pohoda-realpad/
+/debian/multiflexi-pohoda-realpad.substvars
+/debian/multiflexi-pohoda-realpad.debhelper.log
+/debian/pohoda-realpad.debhelper.log
