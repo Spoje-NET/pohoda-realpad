@@ -24,10 +24,6 @@
         },
         {
             "type": "path",
-            "url": "/usr/share/php/GuzzleHttp"
-        },
-        {
-            "type": "path",
             "url": "/usr/share/php/mServer"
         }
     ]
