@@ -1,0 +1,5 @@
+src/*                    usr/lib/pohoda-realpad/
+bin/*                    usr/bin/
+example.env              usr/share/doc/pohoda-realpad
+#io.github.spoje_net.pohoda_realpad.metainfo.xml /usr/share/metainfo/
+pohoda-realpad.svg       usr/share/icons/hicolor/scalable/apps/

@@ -1,0 +1,102 @@
+{
+    "image": "",
+    "name": "Pohoda Bank to Realpad",
+    "description": "Synchronizes bank movements from Pohoda to Realpad CRM.",
+    "executable": "/usr/bin/pohoda-bank-to-realpad",
+    "setup": "php -f /usr/lib/pohoda-realpad/pohoda-bank-to-realpad.php -- {FILE_UPLOAD}",
+    "requirements": "PHP,Composer,Pohoda,Realpad",
+    "cmdparams": "{FILE_UPLOAD}",
+    "deploy": "sudo apt install pohoda-realpad",
+    "homepage": "https://github.com/Spoje-NET/pohoda-realpad",
+    "ociimage": "docker.io/spojenet/pohoda-realpad",
+    "uuid": "51f04e80-13f9-49e7-a161-9ebca69e9ca1",
+    "topics": "Pohoda,Realpad,bank movements,synchronization,CRM",
+    "version": "1.0.0",
+    "environment": {
+        "APP_DEBUG": {
+            "type": "checkbox",
+            "description": "Enable debug mode",
+            "defval": "True",
+            "required": false
+        },
+        "EASE_LOGGER": {
+            "type": "string",
+            "description": "Logger type (e.g., console, file)",
+            "defval": "console",
+            "required": false
+        },
+        "POHODA_ICO": {
+            "type": "string",
+            "description": "Company identifier (IČO) used for Pohoda integration",
+            "defval": "12345678",
+            "required": true
+        },
+        "POHODA_URL": {
+            "type": "string",
+            "description": "Pohoda mServer endpoint URL",
+            "defval": "https://novak.proxy.spojenet.cz",
+            "required": true
+        },
+        "POHODA_USERNAME": {
+            "type": "string",
+            "description": "Pohoda mServer API username",
+            "defval": "api",
+            "required": true
+        },
+        "POHODA_PASSWORD": {
+            "type": "password",
+            "description": "Pohoda mServer API password",
+            "defval": "api",
+            "required": true
+        },
+        "POHODA_TIMEOUT": {
+            "type": "number",
+            "description": "Timeout for Pohoda API requests in milliseconds",
+            "defval": 4000,
+            "required": false
+        },
+        "POHODA_COMPRESS": {
+            "type": "checkbox",
+            "description": "Enable compression for Pohoda API requests",
+            "defval": "False",
+            "required": false
+        },
+        "POHODA_DEBUG": {
+            "type": "checkbox",
+            "description": "Enable debug mode for Pohoda API",
+            "defval": "False",
+            "required": false
+        },
+        "REALPAD_USERNAME": {
+            "type": "string",
+            "description": "Realpad API username",
+            "defval": "realpad",
+            "required": true
+        },
+        "REALPAD_PASSWORD": {
+            "type": "password",
+            "description": "Realpad API password",
+            "defval": "realpad",
+            "required": true
+        },
+        "REALPAD_PROJECT_ID": {
+            "type": "string",
+            "description": "Realpad project ID for which payments are synchronized",
+            "defval": "123456",
+            "required": true
+        },
+        "REALPAD_POHODA_WS": {
+            "type": "string",
+            "description": "Realpad API endpoint for testing or production",
+            "hint": "http://localhost/pohoda-realpad/tests/realpad-mock.php",
+            "required": false
+        },
+        "RESULT_FILE": {
+            "type": "string",
+            "description": "Path to save the result JSON file",
+            "defval": "/tmp/pohod-realpad-result.json",
+            "required": false
+        }
+    },
+    "multiflexi": "PohodaBankToRealpad"
+}

@@ -1,0 +1,20 @@
+#!/usr/bin/make -f
+# You must remove unused comment lines for the released package.
+#export DH_VERBOSE = 1
+#export DEB_BUILD_MAINT_OPTIONS = hardening=+all
+#export DEB_CFLAGS_MAINT_APPEND  = -Wall -pedantic
+#export DEB_LDFLAGS_MAINT_APPEND = -Wl,--as-needed
+
+%:
+	dh $@
+
+override_dh_clean:
+	rm -rf vendor/*
+	dh_clean
+
+override_dh_install:
+	dh_install
+	sed -i -e 's/..\/vendor/\/var\/lib\/composer\/pohoda-realpad/g'   debian/pohoda-realpad/usr/lib/pohoda-realpad/*.php
+	sed -i -e 's/\.\.\/.env//g'  debian/pohoda-realpad/usr/lib/pohoda-realpad/*.php
+	jq '.version = "'`dpkg-parsechangelog | sed -n 's/^Version: //p'| sed 's/~.*//' `'"'  debian/conf/composer.json |sponge debian/pohoda-realpad/usr/lib/pohoda-realpad/composer.json
+	jq '.version = "'`dpkg-parsechangelog | sed -n 's/^Version: //p'| sed 's/~.*//'`'"'  multiflexi/pohoda-bank-to-realpad.app.json |sponge debian/multiflexi-pohoda-realpad/usr/lib/pohoda-realpad/multiflexi/pohoda-bank-to-realpad.app.json

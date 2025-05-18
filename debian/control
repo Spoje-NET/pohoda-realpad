@@ -1,0 +1,68 @@
+Source: pohoda-realpad
+Section: web
+Priority: optional
+Maintainer: Vítězslav Dvořák <info@vitexsoftware.cz>
+Build-Depends:
+ debhelper-compat (= 13),
+ php-cli,
+ php-curl,
+ php-xml,
+ php-mbstring,
+ composer-debian,
+Standards-Version: 4.7.0
+Homepage: https://github.com/Spoje-NET/pohoda-realpad
+Rules-Requires-Root: no
+#Vcs-Git: https://github.com/Spoje-NET/pohoda-realpad.git
+#Vcs-Browser: https://github.com/Spoje-NET/pohoda-realpad
+
+Package: pohoda-realpad
+Architecture: all
+Multi-Arch: foreign
+Depends:
+ ${misc:Depends},
+ ${shlibs:Depends},
+ php-cli,
+ php-curl,
+ php-xml,
+ php-mbstring,
+ php-vitexsoftware-pohoda-connector
+Description: Integration tool for Pohoda and Realpad systems
+ Pohoda-Realpad is a PHP-based integration tool that synchronizes bank movements
+ and payments between the Pohoda accounting system and the Realpad CRM system.
+ It automates the process of extracting bank movements from Pohoda, filtering
+ them based on specific criteria, and sending them to Realpad via its API.
+ .
+ Features:
+  - Synchronizes bank movements and payments.
+  - Integrates with Realpad's API for seamless data exchange.
+  - Provides detailed logging and error handling.
+ .
+ This tool is designed for real estate developers and businesses using both
+ Pohoda and Realpad systems to streamline their financial operations.
+ .
+ For more information, visit the project homepage:
+ https://github.com/Spoje-NET/pohoda-realpad
+
+Package: multiflexi-pohoda-realpad
+Architecture: all
+Multi-Arch: foreign
+Depends:
+ ${misc:Depends},
+ ${shlibs:Depends},
+ pohoda-realpad,
+ multiflexi
+Description: Multiflexi integration for Pohoda-Realpad
+ This package provides integration between the Multiflexi system and the
+ Pohoda-Realpad tool. It enables seamless synchronization of financial data
+ between Pohoda, Realpad, and Multiflexi.
+ .
+ Features:
+  - Extends Pohoda-Realpad functionality to work with Multiflexi.
+  - Automates data synchronization across multiple systems.
+  - Provides detailed logging and error handling.
+ .
+ This package is designed for businesses using Multiflexi alongside Pohoda
+ and Realpad to streamline their financial operations.
+ .
+ For more information, visit the project homepage:
+ https://github.com/Spoje-NET/pohoda-realpad

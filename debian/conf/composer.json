@@ -1,0 +1,34 @@
+{
+    "name": "vitexsoftware/pohoda-realpad",
+    "description": "realpad bank statement downloader for Stormware Pohoda",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Vítězslav Dvořák",
+            "email": "info@vitexsoftware.cz"
+        }
+    ],
+    "require": {
+        "deb/ease-core": "*",
+        "deb/pohoda-connector": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Pohoda\\realpad\\": "/usr/lib/pohoda-realpad/PohodaRealpad/"
+        }
+    },
+    "repositories": [
+        {
+            "type": "path",
+            "url": "/usr/share/php/EaseCore"
+        },
+        {
+            "type": "path",
+            "url": "/usr/share/php/GuzzleHttp"
+        },
+        {
+            "type": "path",
+            "url": "/usr/share/php/mServer"
+        }
+    ]
+}

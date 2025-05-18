@@ -1,0 +1,34 @@
+{
+    "name": "spojenet/pohoda-realpad",
+    "description": "Pohoda vs Realpad integration tools",
+    "type": "project",
+    "require": {
+        "vitexsoftware/pohoda-connector": "^0.7",
+        "vitexsoftware/pohodaser": "^0.1"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "*",
+        "phpstan/phpstan": "*",
+        "friendsofphp/php-cs-fixer": "^3.61",
+        "ergebnis/composer-normalize": "^2.43",
+        "ergebnis/php-cs-fixer-config": "^6.34"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Spojenet\\PohodaRealpad\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "CyberVitexus",
+            "email": "info@vitexsoftware.cz"
+        }
+    ],
+    "minimum-stability": "dev",
+    "config": {
+        "allow-plugins": {
+            "ergebnis/composer-normalize": true
+        }
+    }
+}
