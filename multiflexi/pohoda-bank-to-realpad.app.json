@@ -4,7 +4,7 @@
     "description": "Synchronizes bank movements from Pohoda to Realpad CRM.",
     "executable": "/usr/bin/pohoda-bank-to-realpad",
     "setup": "php -f /usr/lib/pohoda-realpad/pohoda-bank-to-realpad.php -- {FILE_UPLOAD}",
-    "requirements": "PHP,Composer,Pohoda,Realpad",
+    "requirements": "mServer,Realpad",
     "cmdparams": "{FILE_UPLOAD}",
     "deploy": "sudo apt install pohoda-realpad",
     "homepage": "https://github.com/Spoje-NET/pohoda-realpad",
