@@ -112,6 +112,9 @@ if ($banker->isOnline()) {
 $banker->addStatusMessage('processing done', 'debug');
 
 $report['exitcode'] = $exitcode;
+if (!isset($report['keeping']) || !is_array($report['keeping'])) {
+    $report['keeping'] = [];
+}
 $report['send'] = \count($report['keeping']);
 $written = file_put_contents($destination, json_encode($report, Shared::cfg('DEBUG') ? \JSON_PRETTY_PRINT | \JSON_UNESCAPED_UNICODE : 0));
 $banker->addStatusMessage(sprintf(_('Saving result to %s'), $destination), $written ? 'success' : 'error');
