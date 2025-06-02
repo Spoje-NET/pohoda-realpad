@@ -50,7 +50,7 @@
             "required": true
         },
         "POHODA_TIMEOUT": {
-            "type": "number",
+            "type": "integer",
             "description": "Timeout for Pohoda API requests in milliseconds",
             "defval": 4000,
             "required": false
