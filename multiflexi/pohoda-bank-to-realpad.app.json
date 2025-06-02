@@ -94,7 +94,8 @@
         "RESULT_FILE": {
             "type": "string",
             "description": "Path to save the result JSON file",
-            "defval": "/tmp/pohod-realpad-result.json",
+            "hint": "/tmp/pohoda-realpad-result.json",
+            "defval": "/tmp/pohoda-realpad-result.json",
             "required": false
         }
     },

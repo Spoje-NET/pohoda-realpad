@@ -21,7 +21,8 @@ use Ease\Shared;
 
 \define('APP_NAME', 'PohodaBankToRealpad');
 
-require_once __DIR__.'/../vendor/autoload.php';
+require_once '../vendor/autoload.php';
+
 $options = getopt('o::e::', ['output::environment::']);
 
 Shared::init(
