@@ -5,7 +5,7 @@
     "executable": "/usr/bin/pohoda-bank-to-realpad",
     "setup": "php -f /usr/lib/pohoda-realpad/pohoda-bank-to-realpad.php -- {FILE_UPLOAD}",
     "requirements": "mServer,Realpad",
-    "cmdparams": "{FILE_UPLOAD}",
+    "cmdparams": "",
     "deploy": "sudo apt install pohoda-realpad",
     "homepage": "https://github.com/Spoje-NET/pohoda-realpad",
     "ociimage": "docker.io/spojenet/pohoda-realpad",
@@ -14,7 +14,7 @@
     "version": "1.0.0",
     "environment": {
         "APP_DEBUG": {
-            "type": "checkbox",
+            "type": "bool",
             "description": "Enable debug mode",
             "defval": "True",
             "required": false
@@ -56,13 +56,13 @@
             "required": false
         },
         "POHODA_COMPRESS": {
-            "type": "checkbox",
+            "type": "bool",
             "description": "Enable compression for Pohoda API requests",
             "defval": "False",
             "required": false
         },
         "POHODA_DEBUG": {
-            "type": "checkbox",
+            "type": "bool",
             "description": "Enable debug mode for Pohoda API",
             "defval": "False",
             "required": false
@@ -87,7 +87,7 @@
         },
         "REALPAD_POHODA_WS": {
             "type": "string",
-            "description": "Realpad API endpoint for testing or production",
+            "description": "Realpad API endpoint for testing",
             "hint": "http://localhost/pohoda-realpad/tests/realpad-mock.php",
             "required": false
         },
