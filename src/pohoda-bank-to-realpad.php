@@ -38,6 +38,9 @@ if (Shared::cfg('APP_DEBUG')) {
     $banker->logBanner();
 }
 
+$realpadUri = \Ease\Shared::cfg('REALPAD_POHODA_WS', 'https://cms.realpad.eu/ws/v10/add-payments-pohoda');
+$report['realpad'] = $realpadUri;
+
 if ($banker->isOnline()) {
     $report['statement'] = $banker->getBankList("BV.ParSym IS NOT NULL AND BV.ParSym <> ''");
 
@@ -47,7 +50,7 @@ if ($banker->isOnline()) {
         // Initialize cURL
         $ch = curl_init();
 
-        curl_setopt($ch, \CURLOPT_URL, \Ease\Shared::cfg('REALPAD_POHODA_WS', 'https://cms.realpad.eu/ws/v10/add-payments-pohoda'));
+        curl_setopt($ch, \CURLOPT_URL, $realpadUri);
         curl_setopt($ch, \CURLOPT_RETURNTRANSFER, true);
         curl_setopt($ch, \CURLOPT_POST, true);
         curl_setopt($ch, \CURLOPT_POSTFIELDS, [
@@ -57,11 +60,13 @@ if ($banker->isOnline()) {
             'file' => new \CURLFile($outxml, 'application/xml'),
         ]);
         curl_setopt($ch, \CURLOPT_HTTPHEADER, [
-            'User-Agent: PohodaRealpad/'.Shared::appVersion().' https://github.com/Spoje-NET/pohoda-realpad',
+            'User-Agent: PohodaToRealpad/'.Shared::appVersion().' https://github.com/Spoje-NET/pohoda-realpad',
         ]);
 
         $response = curl_exec($ch);
         $httpCode = curl_getinfo($ch, \CURLINFO_HTTP_CODE);
+
+        $report['realpad_response_code'] = $httpCode;
 
         if (curl_errno($ch)) {
             $banker->addStatusMessage(sprintf(_('Curl error: %s'), curl_error($ch)), 'error');
@@ -94,6 +99,21 @@ if ($banker->isOnline()) {
                     break;
             }
 
+            $report['realpad_status'] = match ($httpCode) {
+                201 => 'Payment registered successfully',
+                200 => 'Payment already exists',
+                401 => 'Unauthorized: Invalid credentials or banned account/IP.',
+                400 => 'Bad Request',
+                418 => 'API version deprecated. Please contact Realpad support.',
+                500 => 'Internal Server Error',
+                503 => 'Service Unavailable',
+                504 => 'Gateway Timeout',
+                502 => 'Bad Gateway',
+                404 => 'Not Found',
+                403 => 'Forbidden',
+                default => 'Unexpected HTTP code',
+            };
+
             if ($httpCode !== 201) {
                 $exitcode = $httpCode;
             }
@@ -105,9 +125,11 @@ if ($banker->isOnline()) {
         unlink($outxml);
     }
 } else {
-    $report['result'] = _('no statement obtained');
+    $report['success'] = $banker->processResponse($banker->lastResponseCode);
+    $report['result'] = $banker->lastResponseMessage;
+    $report['pohoda'] = $banker->curlInfo['url'];
     $banker->addStatusMessage($report['result'], 'error');
-    $exitcode = 2;
+    $exitcode = $banker->lastResponseCode;
 }
 
 $banker->addStatusMessage('processing done', 'debug');
