@@ -14,7 +14,7 @@ declare(strict_types=1);
  */
 
 // 1) Obtain bank movements from Pohoda
-// 2) Keep Only Matched banks movements
+// 2) Add movements to report for further audit
 // 3) Push matched banks into realpad
 
 use Ease\Shared;
@@ -38,7 +38,7 @@ if (Shared::cfg('APP_DEBUG')) {
     $banker->logBanner();
 }
 
-$realpadUri = \Ease\Shared::cfg('REALPAD_POHODA_WS', 'https://cms.realpad.eu/ws/v10/add-payments-pohoda');
+$realpadUri = empty(Shared::cfg('REALPAD_POHODA_WS')) ? 'https://cms.realpad.eu/ws/v10/add-payments-pohoda' : Shared::cfg('REALPAD_POHODA_WS');
 $report['realpad'] = $realpadUri;
 
 if ($banker->isOnline()) {
@@ -46,7 +46,11 @@ if ($banker->isOnline()) {
 
     $outxml = sys_get_temp_dir().'/Bankovni_doklady.xml';
 
-    if (file_put_contents($outxml, $banker->lastCurlResponse)) {
+    $saved = file_put_contents($outxml, $banker->lastCurlResponse);
+
+    $banker->addStatusMessage(sprintf(_('Saving Pohoda Bank movements to %s'), $outxml), $saved ? 'debug' : 'error');
+
+    if ($saved) {
         // Initialize cURL
         $ch = curl_init();
 
@@ -65,6 +69,11 @@ if ($banker->isOnline()) {
 
         $response = curl_exec($ch);
         $httpCode = curl_getinfo($ch, \CURLINFO_HTTP_CODE);
+
+        $responseFile = sys_get_temp_dir().'/realpad_response_'.uniqid().'.txt';
+        file_put_contents($responseFile, $response);
+        $report['realpad_response_file'] = $responseFile;
+        $report['realpad_response'] = $response;
 
         $report['realpad_response_code'] = $httpCode;
 
