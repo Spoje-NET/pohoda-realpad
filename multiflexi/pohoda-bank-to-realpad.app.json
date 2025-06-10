@@ -13,9 +13,15 @@
     "topics": "Pohoda,Realpad,bank movements,synchronization,CRM",
     "version": "1.0.0",
     "environment": {
-        "APP_DEBUG": {
+        "DEBUG": {
             "type": "bool",
             "description": "Enable debug mode",
+            "defval": "True",
+            "required": false
+        },
+        "APP_DEBUG": {
+            "type": "bool",
+            "description": "Enable APP debug mode",
             "defval": "True",
             "required": false
         },
