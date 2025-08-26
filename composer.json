@@ -3,7 +3,7 @@
     "description": "Pohoda vs Realpad integration tools",
     "type": "project",
     "require": {
-        "vitexsoftware/pohoda-connector": "^0.8",
+        "vitexsoftware/pohoda-connector": "^0.10",
         "vitexsoftware/pohodaser": "^0.1"
     },
     "require-dev": {
