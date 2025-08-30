@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8de5707cebe17a84babf84dfa9bcb04e",
+    "content-hash": "ba85f3e76ef5c96d09d76a82bfb197c3",
     "packages": [
         {
             "name": "doctrine/instantiator",
@@ -1009,7 +1009,7 @@
                 "portable"
             ],
             "support": {
-                "source": "https://github.com/symfony/polyfill-ctype/tree/v1.32.0"
+                "source": "https://github.com/symfony/polyfill-ctype/tree/v1.33.0"
             },
             "funding": [
                 {
@@ -1174,16 +1174,16 @@
         },
         {
             "name": "vitexsoftware/pohoda-connector",
-            "version": "0.8.0",
+            "version": "0.10.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/VitexSoftware/PHP-Pohoda-Connector.git",
-                "reference": "20882ef5c04de85fce3071d2d801f14d863d4730"
+                "reference": "83b203829bc8de54e693457569c6823b3821e183"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/VitexSoftware/PHP-Pohoda-Connector/zipball/20882ef5c04de85fce3071d2d801f14d863d4730",
-                "reference": "20882ef5c04de85fce3071d2d801f14d863d4730",
+                "url": "https://api.github.com/repos/VitexSoftware/PHP-Pohoda-Connector/zipball/83b203829bc8de54e693457569c6823b3821e183",
+                "reference": "83b203829bc8de54e693457569c6823b3821e183",
                 "shasum": ""
             },
             "require": {
@@ -1195,9 +1195,9 @@
                 "vitexsoftware/pohodaser": "^0.1"
             },
             "require-dev": {
-                "ergebnis/composer-normalize": "^2.45",
-                "ergebnis/php-cs-fixer-config": "^6.38",
-                "friendsofphp/php-cs-fixer": "3.64.0",
+                "ergebnis/composer-normalize": "^2.47",
+                "ergebnis/php-cs-fixer-config": "^6.49",
+                "friendsofphp/php-cs-fixer": "3.82.2",
                 "phpstan/phpstan": "*",
                 "phpunit/phpunit": "*"
             },
@@ -1220,7 +1220,7 @@
             "description": "Stormware's Pohoda mServer client.",
             "support": {
                 "issues": "https://github.com/VitexSoftware/PHP-Pohoda-Connector/issues",
-                "source": "https://github.com/VitexSoftware/PHP-Pohoda-Connector/tree/0.8.0"
+                "source": "https://github.com/VitexSoftware/PHP-Pohoda-Connector/tree/0.10.0"
             },
             "funding": [
                 {
@@ -1228,7 +1228,7 @@
                     "type": "patreon"
                 }
             ],
-            "time": "2025-05-17T22:49:11+00:00"
+            "time": "2025-07-24T09:29:59+00:00"
         },
         {
             "name": "vitexsoftware/pohodaser",
@@ -6790,7 +6790,7 @@
                 "shim"
             ],
             "support": {
-                "source": "https://github.com/symfony/polyfill-php80/tree/v1.32.0"
+                "source": "https://github.com/symfony/polyfill-php80/tree/v1.33.0"
             },
             "funding": [
                 {
@@ -6871,7 +6871,7 @@
                 "shim"
             ],
             "support": {
-                "source": "https://github.com/symfony/polyfill-php81/tree/v1.32.0"
+                "source": "https://github.com/symfony/polyfill-php81/tree/v1.33.0"
             },
             "funding": [
                 {
