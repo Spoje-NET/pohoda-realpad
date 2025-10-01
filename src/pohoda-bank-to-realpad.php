@@ -23,7 +23,7 @@ use Ease\Shared;
 
 require_once '../vendor/autoload.php';
 
-$options = getopt('o::e::', ['output::environment::']);
+$options = getopt('o:e:', ['output:','environment:']);
 
 Shared::init(
     ['POHODA_URL', 'POHODA_USERNAME', 'POHODA_PASSWORD'],
@@ -144,12 +144,7 @@ if ($banker->isOnline()) {
 $banker->addStatusMessage('processing done', 'debug');
 
 $report['exitcode'] = $exitcode;
-
-if (!isset($report['keeping']) || !\is_array($report['keeping'])) {
-    $report['keeping'] = [];
-}
-
-$report['send'] = \count($report['keeping']);
+$report['send'] = 0; // Number of items sent (keeping array is not used in current implementation)
 $written = file_put_contents($destination, json_encode($report, Shared::cfg('DEBUG') ? \JSON_PRETTY_PRINT | \JSON_UNESCAPED_UNICODE : 0));
 $banker->addStatusMessage(sprintf(_('Saving result to %s'), $destination), $written ? 'success' : 'error');
 
