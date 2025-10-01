@@ -1,6 +1,13 @@
-pohoda-realpad (0.1.0) UNRELEASED; urgency=low
+pohoda-realpad (0.2.0) UNRELEASED; urgency=medium
 
+  * multiflexi 2.0 report comply
+
+ -- vitex <info@vitexsoftware.cz>  Wed, 01 Oct 2025 16:09:39 +0200
+
+pohoda-realpad (0.1.0) unstable; urgency=low
+
+  [ Vítězslav Dvořák ]
   * Initial release. Closes: #nnnn
     <nnnn is the bug number of your ITP>
 
- -- Vítězslav Dvořák <info@vitexsoftware.cz>  Fri, 16 May 2025 20:13:43 +0200
+ -- vitex <info@vitexsoftware.cz>  Wed, 01 Oct 2025 16:09:22 +0200
