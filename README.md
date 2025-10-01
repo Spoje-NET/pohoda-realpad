@@ -39,6 +39,42 @@ cp example.env .env
 - `REALPAD_USERNAME` / `REALPAD_PASSWORD` — Realpad API credentials
 - `REALPAD_PROJECT_ID` — Realpad project identifier
 
+## Report Format
+
+The application generates reports in the [MultiFlexi format](https://raw.githubusercontent.com/VitexSoftware/php-vitexsoftware-multiflexi-core/refs/heads/main/multiflexi.report.schema.json), which includes:
+
+**Required fields:**
+
+- `status` — Operation result: `success`, `error`, or `warning`
+- `timestamp` — Completion time in ISO8601 format
+
+**Optional fields:**
+
+- `message` — Human-readable result description
+- `artifacts` — Generated files and URLs (endpoints, responses, XML files)
+- `metrics` — Operational metrics (payments processed, HTTP codes, etc.)
+
+**Example successful report:**
+
+```json
+{
+    "status": "success",
+    "timestamp": "2025-01-01T12:00:00+00:00",
+    "message": "Payment registered successfully. ID: 12345",
+    "artifacts": {
+        "realpad_endpoint": ["https://cms.realpad.eu/ws/v10/add-payments-pohoda"],
+        "pohoda_xml": ["/tmp/Bankovni_doklady.xml"],
+        "realpad_response": ["/tmp/realpad_response_abc123.txt"]
+    },
+    "metrics": {
+        "payments_processed": 1,
+        "http_response_code": 201,
+        "pohoda_records_found": 5,
+        "exit_code": 0
+    }
+}
+```
+
 ## See also
 
 - <https://github.com/Spoje-NET/pohoda-client-checker>

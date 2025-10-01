@@ -31,7 +31,19 @@ Shared::init(
 );
 $destination = \array_key_exists('o', $options) ? $options['o'] : (\array_key_exists('output', $options) ? $options['output'] : Shared::cfg('RESULT_FILE', 'php://stdout'));
 $exitcode = 0;
-$report = [];
+
+// Initialize report according to MultiFlexi schema: https://raw.githubusercontent.com/VitexSoftware/php-vitexsoftware-multiflexi-core/refs/heads/main/multiflexi.report.schema.json
+$report = [
+    'status' => 'success',              // Required: 'success', 'error', or 'warning'
+    'timestamp' => '',                  // Required: ISO8601 datetime string
+    'message' => '',                    // Optional: Human-readable result description
+    'artifacts' => [],                  // Optional: Generated files and URLs
+    'metrics' => [                      // Optional: Operational metrics
+        'payments_processed' => 0,
+        'http_response_code' => 0,
+        'pohoda_records_found' => 0
+    ]
+];
 $banker = new \mServer\Bank();
 
 if (Shared::cfg('APP_DEBUG')) {
@@ -39,14 +51,29 @@ if (Shared::cfg('APP_DEBUG')) {
 }
 
 $realpadUri = empty(Shared::cfg('REALPAD_POHODA_WS')) ? 'https://cms.realpad.eu/ws/v10/add-payments-pohoda' : Shared::cfg('REALPAD_POHODA_WS');
-$report['realpad'] = $realpadUri;
+$report['artifacts']['realpad_endpoint'] = [$realpadUri];
 
-if ($banker->isOnline()) {
-    $report['statement'] = $banker->getBankList("BV.ParSym IS NOT NULL AND BV.ParSym <> ''");
+try {
+    $isOnline = $banker->isOnline();
+} catch (\Exception $e) {
+    $isOnline = false;
+    $report['status'] = 'error';
+    $report['message'] = sprintf(_('Connection error: %s'), $e->getMessage());
+    $report['metrics']['http_response_code'] = 0;
+    $banker->addStatusMessage($report['message'], 'error');
+    $exitcode = 1;
+}
+
+if ($isOnline) {
+    $bankListResult = $banker->getBankList("BV.ParSym IS NOT NULL AND BV.ParSym <> ''");
+    $report['metrics']['pohoda_records_found'] = is_array($bankListResult) ? count($bankListResult) : 0;
 
     $outxml = sys_get_temp_dir().'/Bankovni_doklady.xml';
 
     $saved = file_put_contents($outxml, $banker->lastCurlResponse);
+    if ($saved) {
+        $report['artifacts']['pohoda_xml'] = [$outxml];
+    }
 
     $banker->addStatusMessage(sprintf(_('Saving Pohoda Bank movements to %s'), $outxml), $saved ? 'debug' : 'error');
 
@@ -72,58 +99,58 @@ if ($banker->isOnline()) {
 
         $responseFile = sys_get_temp_dir().'/realpad_response_'.uniqid().'.txt';
         file_put_contents($responseFile, $response);
-        $report['realpad_response_file'] = $responseFile;
-        $report['realpad_response'] = $response;
-
-        $report['realpad_response_code'] = $httpCode;
+        $report['artifacts']['realpad_response'] = [$responseFile];
+        $report['metrics']['http_response_code'] = $httpCode;
 
         if (curl_errno($ch)) {
-            $banker->addStatusMessage(sprintf(_('Curl error: %s'), curl_error($ch)), 'error');
+            $curlError = curl_error($ch);
+            $banker->addStatusMessage(sprintf(_('Curl error: %s'), $curlError), 'error');
+            $report['status'] = 'error';
+            $report['message'] = sprintf(_('Curl error: %s'), $curlError);
         } else {
             switch ($httpCode) {
                 case 201:
                     $banker->addStatusMessage(sprintf(_('Payment registered successfully. ID: %s'), $response), 'success');
+                    $report['status'] = 'success';
+                    $report['message'] = sprintf(_('Payment registered successfully. ID: %s'), $response);
+                    $report['metrics']['payments_processed'] = 1;
 
                     break;
                 case 200:
                     $banker->addStatusMessage(sprintf(_('Payment already exists. ID: %s'), $response), 'info');
+                    $report['status'] = 'warning';
+                    $report['message'] = sprintf(_('Payment already exists. ID: %s'), $response);
+                    $report['metrics']['payments_processed'] = 0;
 
                     break;
                 case 401:
                     $banker->addStatusMessage(_('Unauthorized: Invalid credentials or banned account/IP.'), 'error');
+                    $report['status'] = 'error';
+                    $report['message'] = _('Unauthorized: Invalid credentials or banned account/IP.');
 
                     break;
                 case 400:
                     $banker->addStatusMessage(sprintf(_('Bad Request: %s'), $response), 'error');
+                    $report['status'] = 'error';
+                    $report['message'] = sprintf(_('Bad Request: %s'), $response);
 
                     break;
                 case 418:
                     $banker->addStatusMessage(_('API version deprecated. Please contact Realpad support.'), 'error');
+                    $report['status'] = 'error';
+                    $report['message'] = _('API version deprecated. Please contact Realpad support.');
 
                     break;
 
                 default:
                     $banker->addStatusMessage(sprintf(_('Unexpected HTTP code: %d. Response: %s'), $httpCode, $response), 'error');
+                    $report['status'] = 'error';
+                    $report['message'] = sprintf(_('Unexpected HTTP code: %d. Response: %s'), $httpCode, $response);
 
                     break;
             }
 
-            $report['realpad_status'] = match ($httpCode) {
-                201 => 'Payment registered successfully',
-                200 => 'Payment already exists',
-                401 => 'Unauthorized: Invalid credentials or banned account/IP.',
-                400 => 'Bad Request',
-                418 => 'API version deprecated. Please contact Realpad support.',
-                500 => 'Internal Server Error',
-                503 => 'Service Unavailable',
-                504 => 'Gateway Timeout',
-                502 => 'Bad Gateway',
-                404 => 'Not Found',
-                403 => 'Forbidden',
-                default => 'Unexpected HTTP code',
-            };
-
-            if ($httpCode !== 201) {
+            if ($httpCode !== 201 && $httpCode !== 200) {
                 $exitcode = $httpCode;
             }
         }
@@ -134,17 +161,34 @@ if ($banker->isOnline()) {
         unlink($outxml);
     }
 } else {
-    $report['success'] = $banker->processResponse($banker->lastResponseCode);
-    $report['result'] = $banker->lastResponseMessage;
-    $report['pohoda'] = $banker->curlInfo['url'];
-    $banker->addStatusMessage($report['result'], 'error');
-    $exitcode = $banker->lastResponseCode;
+    $report['status'] = 'error';
+    $report['message'] = $banker->lastResponseMessage ?: _('Pohoda connection failed');
+    $report['artifacts']['pohoda_endpoint'] = [$banker->curlInfo['url'] ?? 'unknown'];
+    $report['metrics']['http_response_code'] = $banker->lastResponseCode ?: 0;
+    $banker->addStatusMessage($report['message'], 'error');
+    $exitcode = $banker->lastResponseCode ?: 1;
 }
 
 $banker->addStatusMessage('processing done', 'debug');
 
-$report['exitcode'] = $exitcode;
-$report['send'] = 0; // Number of items sent (keeping array is not used in current implementation)
+// Set final timestamp
+$report['timestamp'] = (new \DateTime())->format(\DateTime::ATOM);
+
+// Set final status if not already set by specific error conditions
+if ($report['status'] === 'success' && $exitcode !== 0) {
+    $report['status'] = 'error';
+}
+
+// Set default message if empty
+if (empty($report['message'])) {
+    $report['message'] = $report['status'] === 'success' 
+        ? _('Processing completed successfully') 
+        : _('Processing completed with errors');
+}
+
+// Add exit code to metrics
+$report['metrics']['exit_code'] = $exitcode;
+
 $written = file_put_contents($destination, json_encode($report, Shared::cfg('DEBUG') ? \JSON_PRETTY_PRINT | \JSON_UNESCAPED_UNICODE : 0));
 $banker->addStatusMessage(sprintf(_('Saving result to %s'), $destination), $written ? 'success' : 'error');
 

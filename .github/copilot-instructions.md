@@ -40,6 +40,8 @@ When writing code, always ensure that it is maintainable and follows best practi
 
 All files in the multiflexi/*.app.json directory must conform to the schema available at: https://raw.githubusercontent.com/VitexSoftware/php-vitexsoftware-multiflexi-core/refs/heads/main/multiflexi.app.schema.json
 
+All produced reports must conform to the schema available at: https://raw.githubusercontent.com/VitexSoftware/php-vitexsoftware-multiflexi-core/refs/heads/main/multiflexi.report.schema.json
+
 When create new class or update existing class, always create or update its phpunit test files.
 
 When developing or testing this application, always run the main script from the src/ directory:

@@ -19,3 +19,4 @@ composer.phar
 /debian/multiflexi-pohoda-realpad.substvars
 /debian/multiflexi-pohoda-realpad.debhelper.log
 /debian/pohoda-realpad.debhelper.log
+.phpunit.result.cache

@@ -116,8 +116,9 @@ debian/                           # Debian packaging files
 ### Error Handling and Logging
 - Uses `Ease\Shared` logging framework with configurable output (console, file)
 - Comprehensive status messages for each operation step
-- JSON output format with detailed execution reports
+- MultiFlexi-compliant JSON report format with status, timestamp, artifacts, and metrics
 - Temporary file cleanup after processing
+- Proper exception handling for connection failures
 
 ### MultiFlexi Integration
 This application is designed as a MultiFlexi app with:
