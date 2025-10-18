@@ -34,14 +34,14 @@ class ReportIntegrationTest extends TestCase
             'message' => 'Connection error: Could not resolve host: invalid.example.com',
             'artifacts' => [
                 'realpad_endpoint' => ['http://localhost/pohoda-realpad/tests/realpad-mock.php'],
-                'pohoda_endpoint' => ['https://invalid.example.com/status']
+                'pohoda_endpoint' => ['https://invalid.example.com/status'],
             ],
             'metrics' => [
                 'payments_processed' => 0,
                 'http_response_code' => 0,
                 'pohoda_records_found' => 0,
-                'exit_code' => 1
-            ]
+                'exit_code' => 1,
+            ],
         ];
 
         $this->validateMultiFlexiReport($errorReport);
@@ -56,14 +56,14 @@ class ReportIntegrationTest extends TestCase
             'artifacts' => [
                 'realpad_endpoint' => ['http://localhost/pohoda-realpad/tests/realpad-mock.php'],
                 'pohoda_xml' => ['/tmp/Bankovni_doklady.xml'],
-                'realpad_response' => ['/tmp/realpad_response_abc123.txt']
+                'realpad_response' => ['/tmp/realpad_response_abc123.txt'],
             ],
             'metrics' => [
                 'payments_processed' => 0,
                 'http_response_code' => 404,
                 'pohoda_records_found' => 5,
-                'exit_code' => 404
-            ]
+                'exit_code' => 404,
+            ],
         ];
 
         $this->validateMultiFlexiReport($mixedReport);
@@ -79,14 +79,14 @@ class ReportIntegrationTest extends TestCase
             'artifacts' => [
                 'realpad_endpoint' => ['http://localhost/pohoda-realpad/tests/realpad-mock.php'],
                 'pohoda_xml' => ['/tmp/Bankovni_doklady.xml'],
-                'realpad_response' => ['/tmp/realpad_response_def456.txt']
+                'realpad_response' => ['/tmp/realpad_response_def456.txt'],
             ],
             'metrics' => [
                 'payments_processed' => 1,
                 'http_response_code' => 201,
                 'pohoda_records_found' => 3,
-                'exit_code' => 0
-            ]
+                'exit_code' => 0,
+            ],
         ];
 
         $this->validateMultiFlexiReport($successReport);
@@ -102,14 +102,14 @@ class ReportIntegrationTest extends TestCase
             'artifacts' => [
                 'realpad_endpoint' => ['http://localhost/pohoda-realpad/tests/realpad-mock.php'],
                 'pohoda_xml' => ['/tmp/Bankovni_doklady.xml'],
-                'realpad_response' => ['/tmp/realpad_response_ghi789.txt']
+                'realpad_response' => ['/tmp/realpad_response_ghi789.txt'],
             ],
             'metrics' => [
                 'payments_processed' => 0,
                 'http_response_code' => 200,
                 'pohoda_records_found' => 2,
-                'exit_code' => 0
-            ]
+                'exit_code' => 0,
+            ],
         ];
 
         $this->validateMultiFlexiReport($warningReport);
@@ -133,14 +133,14 @@ class ReportIntegrationTest extends TestCase
         $this->assertContains(
             $report['status'],
             ['success', 'error', 'warning'],
-            'Status must be one of: success, error, warning'
+            'Status must be one of: success, error, warning',
         );
 
         // Timestamp must be ISO8601
         $this->assertMatchesRegularExpression(
             '/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}[+-]\d{2}:\d{2}$/',
             $report['timestamp'],
-            'Timestamp must be in ISO8601 format'
+            'Timestamp must be in ISO8601 format',
         );
 
         // Optional fields validation
@@ -150,9 +150,11 @@ class ReportIntegrationTest extends TestCase
 
         if (isset($report['artifacts'])) {
             $this->assertIsArray($report['artifacts'], 'Artifacts must be an array');
+
             foreach ($report['artifacts'] as $artifactType => $artifactList) {
                 $this->assertIsString($artifactType, 'Artifact type must be a string');
                 $this->assertIsArray($artifactList, 'Artifact list must be an array');
+
                 foreach ($artifactList as $artifact) {
                     $this->assertIsString($artifact, 'Each artifact must be a string');
                 }
@@ -161,11 +163,12 @@ class ReportIntegrationTest extends TestCase
 
         if (isset($report['metrics'])) {
             $this->assertIsArray($report['metrics'], 'Metrics must be an array');
+
             foreach ($report['metrics'] as $metricName => $metricValue) {
                 $this->assertIsString($metricName, 'Metric name must be a string');
                 $this->assertTrue(
-                    is_numeric($metricValue) || is_string($metricValue),
-                    'Metric value must be numeric or string'
+                    is_numeric($metricValue) || \is_string($metricValue),
+                    'Metric value must be numeric or string',
                 );
             }
         }

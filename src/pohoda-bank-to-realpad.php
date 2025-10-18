@@ -23,7 +23,7 @@ use Ease\Shared;
 
 require_once '../vendor/autoload.php';
 
-$options = getopt('o:e:', ['output:','environment:']);
+$options = getopt('o:e:', ['output:', 'environment:']);
 
 Shared::init(
     ['POHODA_URL', 'POHODA_USERNAME', 'POHODA_PASSWORD'],
@@ -41,8 +41,8 @@ $report = [
     'metrics' => [                      // Optional: Operational metrics
         'payments_processed' => 0,
         'http_response_code' => 0,
-        'pohoda_records_found' => 0
-    ]
+        'pohoda_records_found' => 0,
+    ],
 ];
 $banker = new \mServer\Bank();
 
@@ -66,11 +66,12 @@ try {
 
 if ($isOnline) {
     $bankListResult = $banker->getBankList("BV.ParSym IS NOT NULL AND BV.ParSym <> ''");
-    $report['metrics']['pohoda_records_found'] = is_array($bankListResult) ? count($bankListResult) : 0;
+    $report['metrics']['pohoda_records_found'] = \is_array($bankListResult) ? \count($bankListResult) : 0;
 
     $outxml = sys_get_temp_dir().'/Bankovni_doklady.xml';
 
     $saved = file_put_contents($outxml, $banker->lastCurlResponse);
+
     if ($saved) {
         $report['artifacts']['pohoda_xml'] = [$outxml];
     }
@@ -181,8 +182,8 @@ if ($report['status'] === 'success' && $exitcode !== 0) {
 
 // Set default message if empty
 if (empty($report['message'])) {
-    $report['message'] = $report['status'] === 'success' 
-        ? _('Processing completed successfully') 
+    $report['message'] = $report['status'] === 'success'
+        ? _('Processing completed successfully')
         : _('Processing completed with errors');
 }
 

@@ -1,8 +1,14 @@
-pohoda-realpad (0.2.0) UNRELEASED; urgency=medium
+pohoda-realpad (0.2.1) UNRELEASED; urgency=medium
+
+  * MultiFlexi definition update
+
+ -- vitex <info@vitexsoftware.cz>  Sat, 18 Oct 2025 22:40:37 +0200
+
+pohoda-realpad (0.2.0) unstable; urgency=medium
 
   * multiflexi 2.0 report comply
 
- -- vitex <info@vitexsoftware.cz>  Wed, 01 Oct 2025 16:09:39 +0200
+ -- vitex <info@vitexsoftware.cz>  Sat, 18 Oct 2025 22:40:23 +0200
 
 pohoda-realpad (0.1.0) unstable; urgency=low
 
