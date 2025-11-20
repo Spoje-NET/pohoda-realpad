@@ -98,3 +98,15 @@ Please use the .deb packages. The repository is availble:
     sudo apt update
     sudo apt install pohoda-realpad
 ```
+
+## Exit Codes
+
+This application uses the following exit codes:
+
+- `0`: Success
+- `1`: General error
+- `200`: HTTP OK
+- `201`: HTTP Created
+- `400`: Bad request - invalid data or parameters
+- `401`: Unauthorized - authentication failed
+- `418`: I'm a teapot (HTTP status code)

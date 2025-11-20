@@ -1,178 +1,242 @@
 {
-  "$schema": "https://raw.githubusercontent.com/VitexSoftware/php-vitexsoftware-multiflexi-core/refs/heads/main/multiflexi.app.schema.json",
-  "schemaVersion": "3.0.0",
-  "uuid": "51f04e80-13f9-49e7-a161-9ebca69e9ca1",
-  "name": {
-    "en": "Pohoda Bank to Realpad",
-    "cs": "Pohoda Bank do Realpadu"
-  },
-  "description": {
-    "en": "Synchronizes bank movements from Pohoda to Realpad CRM.",
-    "cs": "Synchronizuje bankovní pohyby z Pohody do CRM Realpad."
-  },
-  "version": "1.0.0",
-  "tags": ["Pohoda", "Realpad", "bank movements", "synchronization", "CRM"],
-  "homepage": "https://github.com/Spoje-NET/pohoda-realpad",
-  "image": "",
-  "ociimage": "ghcr.io/spoje-net/pohoda-realpad:latest",
-  "executable": "/usr/bin/pohoda-bank-to-realpad",
-  "environment": {
-    "DEBUG": {
-      "type": "bool",
-      "description": {
-        "en": "Enable debug mode",
-        "cs": "Povolit ladicí režim"
-      },
-      "defval": "True",
-      "required": false,
-      "category": "Behavior"
+    "$schema": "https://raw.githubusercontent.com/VitexSoftware/php-vitexsoftware-multiflexi-core/refs/heads/main/multiflexi.app.schema.json",
+    "schemaVersion": "3.1.0",
+    "uuid": "51f04e80-13f9-49e7-a161-9ebca69e9ca1",
+    "name": {
+        "en": "Pohoda Bank to Realpad",
+        "cs": "Pohoda Bank do Realpadu"
     },
-    "APP_DEBUG": {
-      "type": "bool",
-      "description": {
-        "en": "Enable APP debug mode",
-        "cs": "Povolit ladicí režim aplikace"
-      },
-      "defval": "True",
-      "required": false,
-      "category": "Behavior"
+    "description": {
+        "en": "Synchronizes bank movements from Pohoda to Realpad CRM.",
+        "cs": "Synchronizuje bankovní pohyby z Pohody do CRM Realpad."
     },
-    "EASE_LOGGER": {
-      "type": "string",
-      "description": {
-        "en": "Logger type (e.g., console, file)",
-        "cs": "Typ logování (např. konzole, soubor)"
-      },
-      "defval": "console",
-      "required": false,
-      "category": "Behavior"
+    "version": "1.0.0",
+    "tags": [
+        "Pohoda",
+        "Realpad",
+        "bank movements",
+        "synchronization",
+        "CRM"
+    ],
+    "homepage": "https://github.com/Spoje-NET/pohoda-realpad",
+    "image": "",
+    "ociimage": "ghcr.io/spoje-net/pohoda-realpad:latest",
+    "executable": "/usr/bin/pohoda-bank-to-realpad",
+    "environment": {
+        "DEBUG": {
+            "type": "bool",
+            "description": {
+                "en": "Enable debug mode",
+                "cs": "Povolit ladicí režim"
+            },
+            "defval": "True",
+            "required": false,
+            "category": "Behavior"
+        },
+        "APP_DEBUG": {
+            "type": "bool",
+            "description": {
+                "en": "Enable APP debug mode",
+                "cs": "Povolit ladicí režim aplikace"
+            },
+            "defval": "True",
+            "required": false,
+            "category": "Behavior"
+        },
+        "EASE_LOGGER": {
+            "type": "string",
+            "description": {
+                "en": "Logger type (e.g., console, file)",
+                "cs": "Typ logování (např. konzole, soubor)"
+            },
+            "defval": "console",
+            "required": false,
+            "category": "Behavior"
+        },
+        "POHODA_ICO": {
+            "type": "string",
+            "description": {
+                "en": "Company identifier (IČO) used for Pohoda integration",
+                "cs": "Identifikátor společnosti (IČO) pro integraci s Pohodou"
+            },
+            "defval": "12345678",
+            "required": true,
+            "category": "API"
+        },
+        "POHODA_URL": {
+            "type": "string",
+            "description": {
+                "en": "Pohoda mServer endpoint URL",
+                "cs": "URL koncového bodu Pohoda mServeru"
+            },
+            "defval": "https://novak.proxy.spojenet.cz",
+            "required": true,
+            "category": "API"
+        },
+        "POHODA_USERNAME": {
+            "type": "string",
+            "description": {
+                "en": "Pohoda mServer API username",
+                "cs": "Uživatelské jméno pro API Pohoda mServeru"
+            },
+            "defval": "api",
+            "required": true,
+            "category": "API"
+        },
+        "POHODA_PASSWORD": {
+            "type": "password",
+            "description": {
+                "en": "Pohoda mServer API password",
+                "cs": "Heslo pro API Pohoda mServeru"
+            },
+            "defval": "api",
+            "required": true,
+            "category": "API"
+        },
+        "POHODA_TIMEOUT": {
+            "type": "integer",
+            "description": {
+                "en": "Timeout for Pohoda API requests in milliseconds",
+                "cs": "Časový limit pro požadavky na API Pohoda v milisekundách"
+            },
+            "defval": 4000,
+            "required": false,
+            "category": "API"
+        },
+        "POHODA_COMPRESS": {
+            "type": "bool",
+            "description": {
+                "en": "Enable compression for Pohoda API requests",
+                "cs": "Povolit kompresi pro požadavky na API Pohoda"
+            },
+            "defval": "False",
+            "required": false,
+            "category": "API"
+        },
+        "POHODA_DEBUG": {
+            "type": "bool",
+            "description": {
+                "en": "Enable debug mode for Pohoda API",
+                "cs": "Povolit ladicí režim pro API Pohoda"
+            },
+            "defval": "False",
+            "required": false,
+            "category": "API"
+        },
+        "REALPAD_USERNAME": {
+            "type": "string",
+            "description": {
+                "en": "Realpad API username",
+                "cs": "Uživatelské jméno pro API Realpad"
+            },
+            "defval": "realpad",
+            "required": true,
+            "category": "Other"
+        },
+        "REALPAD_PASSWORD": {
+            "type": "password",
+            "description": {
+                "en": "Realpad API password",
+                "cs": "Heslo pro API Realpad"
+            },
+            "defval": "realpad",
+            "required": true,
+            "category": "Security"
+        },
+        "REALPAD_PROJECT_ID": {
+            "type": "string",
+            "description": {
+                "en": "Realpad project ID for which payments are synchronized",
+                "cs": "ID projektu Realpad, pro který jsou synchronizovány platby"
+            },
+            "defval": "123456",
+            "required": true,
+            "category": "Other"
+        },
+        "REALPAD_POHODA_WS": {
+            "type": "string",
+            "description": {
+                "en": "Realpad API endpoint for testing",
+                "cs": "Testovací koncový bod API Realpad"
+            },
+            "hint": {
+                "en": "http://localhost/pohoda-realpad/tests/realpad-mock.php",
+                "cs": "http://localhost/pohoda-realpad/tests/realpad-mock.php"
+            },
+            "required": false,
+            "category": "API"
+        },
+        "RESULT_FILE": {
+            "type": "string",
+            "description": {
+                "en": "Path to save the result JSON file",
+                "cs": "Cesta pro uložení výsledného JSON souboru"
+            },
+            "hint": {
+                "en": "pohoda-realpad-result.json",
+                "cs": "pohoda-realpad-result.json"
+            },
+            "defval": "pohoda-realpad-result.json",
+            "required": false,
+            "category": "Other"
+        }
     },
-    "POHODA_ICO": {
-      "type": "string",
-      "description": {
-        "en": "Company identifier (IČO) used for Pohoda integration",
-        "cs": "Identifikátor společnosti (IČO) pro integraci s Pohodou"
-      },
-      "defval": "12345678",
-      "required": true,
-      "category": "API"
-    },
-    "POHODA_URL": {
-      "type": "string",
-      "description": {
-        "en": "Pohoda mServer endpoint URL",
-        "cs": "URL koncového bodu Pohoda mServeru"
-      },
-      "defval": "https://novak.proxy.spojenet.cz",
-      "required": true,
-      "category": "API"
-    },
-    "POHODA_USERNAME": {
-      "type": "string",
-      "description": {
-        "en": "Pohoda mServer API username",
-        "cs": "Uživatelské jméno pro API Pohoda mServeru"
-      },
-      "defval": "api",
-      "required": true,
-      "category": "API"
-    },
-    "POHODA_PASSWORD": {
-      "type": "password",
-      "description": {
-        "en": "Pohoda mServer API password",
-        "cs": "Heslo pro API Pohoda mServeru"
-      },
-      "defval": "api",
-      "required": true,
-      "category": "API"
-    },
-    "POHODA_TIMEOUT": {
-      "type": "integer",
-      "description": {
-        "en": "Timeout for Pohoda API requests in milliseconds",
-        "cs": "Časový limit pro požadavky na API Pohoda v milisekundách"
-      },
-      "defval": 4000,
-      "required": false,
-      "category": "API"
-    },
-    "POHODA_COMPRESS": {
-      "type": "bool",
-      "description": {
-        "en": "Enable compression for Pohoda API requests",
-        "cs": "Povolit kompresi pro požadavky na API Pohoda"
-      },
-      "defval": "False",
-      "required": false,
-      "category": "API"
-    },
-    "POHODA_DEBUG": {
-      "type": "bool",
-      "description": {
-        "en": "Enable debug mode for Pohoda API",
-        "cs": "Povolit ladicí režim pro API Pohoda"
-      },
-      "defval": "False",
-      "required": false,
-      "category": "API"
-    },
-    "REALPAD_USERNAME": {
-      "type": "string",
-      "description": {
-        "en": "Realpad API username",
-        "cs": "Uživatelské jméno pro API Realpad"
-      },
-      "defval": "realpad",
-      "required": true,
-      "category": "Other"
-    },
-    "REALPAD_PASSWORD": {
-      "type": "password",
-      "description": {
-        "en": "Realpad API password",
-        "cs": "Heslo pro API Realpad"
-      },
-      "defval": "realpad",
-      "required": true,
-      "category": "Security"
-    },
-    "REALPAD_PROJECT_ID": {
-      "type": "string",
-      "description": {
-        "en": "Realpad project ID for which payments are synchronized",
-        "cs": "ID projektu Realpad, pro který jsou synchronizovány platby"
-      },
-      "defval": "123456",
-      "required": true,
-      "category": "Other"
-    },
-    "REALPAD_POHODA_WS": {
-      "type": "string",
-      "description": {
-        "en": "Realpad API endpoint for testing",
-        "cs": "Testovací koncový bod API Realpad"
-      },
-      "hint": {
-        "en": "http://localhost/pohoda-realpad/tests/realpad-mock.php",
-        "cs": "http://localhost/pohoda-realpad/tests/realpad-mock.php"
-      },
-      "required": false,
-      "category": "API"
-    },
-    "RESULT_FILE": {
-      "type": "string",
-      "description": {
-        "en": "Path to save the result JSON file",
-        "cs": "Cesta pro uložení výsledného JSON souboru"
-      },
-      "hint": {
-        "en": "pohoda-realpad-result.json",
-        "cs": "pohoda-realpad-result.json"
-      },
-      "defval": "pohoda-realpad-result.json",
-      "required": false,
-      "category": "Other"
+    "exitCodes": {
+        "0": {
+            "description": {
+                "en": "Success",
+                "cs": "Úspěch"
+            },
+            "severity": "success",
+            "retry": false
+        },
+        "1": {
+            "description": {
+                "en": "General error",
+                "cs": "Obecná chyba"
+            },
+            "severity": "error",
+            "retry": true
+        },
+        "200": {
+            "description": {
+                "en": "Application-specific error code 200",
+                "cs": "Aplikační chybový kód 200"
+            },
+            "severity": "error",
+            "retry": true
+        },
+        "201": {
+            "description": {
+                "en": "Application-specific error code 201",
+                "cs": "Aplikační chybový kód 201"
+            },
+            "severity": "error",
+            "retry": true
+        },
+        "400": {
+            "description": {
+                "en": "Bad request - invalid data or parameters",
+                "cs": "Chybný požadavek - neplatná data nebo parametry"
+            },
+            "severity": "error",
+            "retry": false
+        },
+        "401": {
+            "description": {
+                "en": "Unauthorized - authentication failed",
+                "cs": "Neautorizováno - ověření selhalo"
+            },
+            "severity": "error",
+            "retry": false
+        },
+        "418": {
+            "description": {
+                "en": "Application-specific error code 418",
+                "cs": "Aplikační chybový kód 418"
+            },
+            "severity": "error",
+            "retry": true
+        }
     }
-  }
 }
