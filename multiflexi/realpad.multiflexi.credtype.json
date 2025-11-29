@@ -1,5 +1,5 @@
 {
-  "id": "realpad",
+  "keyword-type": "realpad",
   "uuid": "4eecfeed-c10a-4e05-9457-46d56bc5b02d",
   "name": {
     "en": "Realpad API Credentials",
@@ -9,10 +9,9 @@
     "en": "Credentials for authenticating with the Realpad API.",
     "cs": "Přihlašovací údaje pro autentizaci k API Realpad."
   },
-  "version": "0.1.0",
   "fields": [
     {
-      "id": "REALPAD_USERNAME",
+      "keyword": "REALPAD_USERNAME",
       "name": {
         "en": "Realpad Username",
         "cs": "Uživatelské jméno Realpad"
@@ -25,7 +24,7 @@
       "required": true
     },
     {
-      "id": "REALPAD_PASSWORD",
+      "keyword": "REALPAD_PASSWORD",
       "name": {
         "en": "Realpad Password",
         "cs": "Heslo Realpad"
