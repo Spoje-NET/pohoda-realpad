@@ -50,7 +50,7 @@ Depends:
  ${misc:Depends},
  ${shlibs:Depends},
  pohoda-realpad,
- multiflexi
+ multiflexi-cli
 Description: Multiflexi integration for Pohoda-Realpad
  This package provides integration between the Multiflexi system and the
  Pohoda-Realpad tool. It enables seamless synchronization of financial data
