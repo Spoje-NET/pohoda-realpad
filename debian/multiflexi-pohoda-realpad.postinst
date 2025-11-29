@@ -8,7 +8,7 @@ for file in `ls /usr/lib/pohoda-realpad/multiflexi/*.app.json`
 do
 	multiflexi-cli application import-json --file $file
 done
-for file in `ls /usr/lib/pohoda-realpad/multiflexi/*.credential-type.json`
+for file in `ls /usr/lib/pohoda-realpad/multiflexi/*.credtype.json`
 do
 	multiflexi-cli credtype import-json --file $file
 done

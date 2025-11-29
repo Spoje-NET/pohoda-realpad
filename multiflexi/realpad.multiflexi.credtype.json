@@ -9,6 +9,7 @@
     "en": "Credentials for authenticating with the Realpad API.",
     "cs": "Přihlašovací údaje pro autentizaci k API Realpad."
   },
+  "version": "0.1.0",
   "fields": [
     {
       "id": "REALPAD_USERNAME",
