@@ -10,7 +10,7 @@ do
 done
 for file in `ls /usr/lib/pohoda-realpad/multiflexi/*.credential-type.json`
 do
-	multiflexi-json2credential-type $file
+	multiflexi-cli credtype import-json --file $file
 done
 
 #DEBHELPER#
