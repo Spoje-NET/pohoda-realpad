@@ -1,6 +1,7 @@
 {
-  "keyword-type": "realpad",
   "uuid": "4eecfeed-c10a-4e05-9457-46d56bc5b02d",
+  "version": "0.1.0",
+  "code": "Realpad",
   "name": {
     "en": "Realpad API Credentials",
     "cs": "Přihlašovací údaje k API Realpad"
