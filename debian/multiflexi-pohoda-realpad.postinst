@@ -4,13 +4,14 @@ set -e
 
 . /usr/share/debconf/confmodule
 
-for file in `ls /usr/lib/pohoda-realpad/multiflexi/*.app.json`
+for file in $(ls /usr/lib/pohoda-realpad/multiflexi/*.app.json)
 do
 	multiflexi-cli application import-json --file $file
 done
-for file in `ls /usr/lib/pohoda-realpad/multiflexi/*.credtype.json`
+
+for file in $(ls /usr/lib/pohoda-realpad/multiflexi/*.credprototype.json )
 do
-	multiflexi-cli credtype import-json --file $file
+	multiflexi-cli crprototype import-json --file $file
 done
 
 #DEBHELPER#

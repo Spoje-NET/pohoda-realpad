@@ -1,0 +1,317 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "2aedc5e6c020b06667842aff62ed0184",
+    "packages": [
+        {
+            "name": "deb/ease-core",
+            "version": "1.49.1.319",
+            "dist": {
+                "type": "path",
+                "url": "/usr/share/php/EaseCore",
+                "reference": "bada6ade733b0010eea1627daefc5ecc64a236f0"
+            },
+            "require": {
+                "composer-runtime-api": "*",
+                "php": ">=7"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Ease\\": ".",
+                    "Ease\\Logger\\": "Logger"
+                }
+            },
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Vítězslav Dvořák",
+                    "email": "info@vitexsoftware.cz",
+                    "homepage": "http://v.s.cz/"
+                }
+            ],
+            "description": "An Core of PHP Framework for Ease of writing Applications (debianized)",
+            "homepage": "http://v.s.cz/ease.php",
+            "transport-options": {
+                "relative": false
+            }
+        },
+        {
+            "name": "deb/pohoda-connector",
+            "version": "0.10.0.110",
+            "dist": {
+                "type": "path",
+                "url": "/usr/share/php/mServer",
+                "reference": "b241d546425d3e704c52f211417692e7ce059efc"
+            },
+            "require": {
+                "deb/ease-core": "*",
+                "ext-curl": "*",
+                "ext-json": "*",
+                "lightools/xml": "v2.0.0",
+                "riesenia/pohoda": ">=1.5"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "mServer\\": "."
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Vítězslav Dvořák",
+                    "email": "vitex@vitexsoftware.cz"
+                }
+            ],
+            "description": "Library for easy interaction with czech accounting system AbraFlexi.",
+            "homepage": "https://github.com/VitexSoftware/PHP-Pohoda-Connector",
+            "transport-options": {
+                "relative": false
+            }
+        },
+        {
+            "name": "lightools/xml",
+            "version": "v2.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/lightools/xml.git",
+                "reference": "ecb30eebb6a37909709eab9c2374ed35d0773dec"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/lightools/xml/zipball/ecb30eebb6a37909709eab9c2374ed35d0773dec",
+                "reference": "ecb30eebb6a37909709eab9c2374ed35d0773dec",
+                "shasum": ""
+            },
+            "require": {
+                "ext-dom": "*",
+                "php": ">=7.1"
+            },
+            "require-dev": {
+                "nette/tester": "1.*"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "src/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Simple and safe parsing of XML and HTML sources.",
+            "support": {
+                "issues": "https://github.com/lightools/xml/issues",
+                "source": "https://github.com/lightools/xml/tree/master"
+            },
+            "time": "2017-02-05T12:40:06+00:00"
+        },
+        {
+            "name": "riesenia/pohoda",
+            "version": "v1.25.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/riesenia/pohoda.git",
+                "reference": "a8cd4a19c2b97fba0ae398018670cd63b275a6d6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/riesenia/pohoda/zipball/a8cd4a19c2b97fba0ae398018670cd63b275a6d6",
+                "reference": "a8cd4a19c2b97fba0ae398018670cd63b275a6d6",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.1 || ^8.0",
+                "symfony/options-resolver": "^4.0 || ^5.0 || ^6.0"
+            },
+            "require-dev": {
+                "friends-of-phpspec/phpspec-expect": "*",
+                "phpspec/phpspec": "^5.0 || ^6.0 || ^7.0",
+                "rshop/php-cs-fixer-config": "^3.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-old": "1.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Riesenia\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Tomas Saghy",
+                    "email": "segy@riesenia.com"
+                }
+            ],
+            "description": "Pohoda XML communication",
+            "support": {
+                "issues": "https://github.com/riesenia/pohoda/issues",
+                "source": "https://github.com/riesenia/pohoda/tree/v1.25.0"
+            },
+            "time": "2025-07-29T08:28:24+00:00"
+        },
+        {
+            "name": "symfony/deprecation-contracts",
+            "version": "v3.6.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/deprecation-contracts.git",
+                "reference": "63afe740e99a13ba87ec199bb07bbdee937a5b62"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/deprecation-contracts/zipball/63afe740e99a13ba87ec199bb07bbdee937a5b62",
+                "reference": "63afe740e99a13ba87ec199bb07bbdee937a5b62",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=8.1"
+            },
+            "type": "library",
+            "extra": {
+                "thanks": {
+                    "url": "https://github.com/symfony/contracts",
+                    "name": "symfony/contracts"
+                },
+                "branch-alias": {
+                    "dev-main": "3.6-dev"
+                }
+            },
+            "autoload": {
+                "files": [
+                    "function.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nicolas Grekas",
+                    "email": "p@tchwork.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "A generic function and convention to trigger deprecation notices",
+            "homepage": "https://symfony.com",
+            "support": {
+                "source": "https://github.com/symfony/deprecation-contracts/tree/v3.6.0"
+            },
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2024-09-25T14:21:43+00:00"
+        },
+        {
+            "name": "symfony/options-resolver",
+            "version": "v6.4.25",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/options-resolver.git",
+                "reference": "d28e7e2db8a73e9511df892d36445f61314bbebe"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/options-resolver/zipball/d28e7e2db8a73e9511df892d36445f61314bbebe",
+                "reference": "d28e7e2db8a73e9511df892d36445f61314bbebe",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=8.1",
+                "symfony/deprecation-contracts": "^2.5|^3"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\OptionsResolver\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Provides an improved replacement for the array_replace PHP function",
+            "homepage": "https://symfony.com",
+            "keywords": [
+                "config",
+                "configuration",
+                "options"
+            ],
+            "support": {
+                "source": "https://github.com/symfony/options-resolver/tree/v6.4.25"
+            },
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://github.com/nicolas-grekas",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2025-08-04T17:06:28+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": {},
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": {},
+    "platform-dev": {},
+    "plugin-api-version": "2.6.0"
+}
