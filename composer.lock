@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "05a4bc539f1d2b94848a4fa625c4e79f",
+    "content-hash": "40d3d131b90f7505d6eb359c2b9afa81",
     "packages": [
         {
             "name": "doctrine/instantiator",
@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/instantiator.git",
-                "reference": "78f5d718c7f52afc31e59434f625b34c52875d72"
+                "reference": "c795a176780bcada3d008d07eef0c2b1b298665c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/instantiator/zipball/78f5d718c7f52afc31e59434f625b34c52875d72",
-                "reference": "78f5d718c7f52afc31e59434f625b34c52875d72",
+                "url": "https://api.github.com/repos/doctrine/instantiator/zipball/c795a176780bcada3d008d07eef0c2b1b298665c",
+                "reference": "c795a176780bcada3d008d07eef0c2b1b298665c",
                 "shasum": ""
             },
             "require": {
@@ -35,7 +35,7 @@
             "type": "library",
             "autoload": {
                 "psr-4": {
-                    "Doctrine\\Instantiator\\": "src/Doctrine/Instantiator/"
+                    "Doctrine\\Instantiator\\": "src/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -73,7 +73,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-01-14T07:50:32+00:00"
+            "time": "2026-03-20T19:06:08+00:00"
         },
         {
             "name": "doctrine/lexer",
@@ -282,12 +282,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/schmittjoh/serializer.git",
-                "reference": "b02a6c00d8335ef68c163bf7c9e39f396dc5853f"
+                "reference": "d725ebd288688bb24f47ee467b1299b0fc6d04f8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/schmittjoh/serializer/zipball/b02a6c00d8335ef68c163bf7c9e39f396dc5853f",
-                "reference": "b02a6c00d8335ef68c163bf7c9e39f396dc5853f",
+                "url": "https://api.github.com/repos/schmittjoh/serializer/zipball/d725ebd288688bb24f47ee467b1299b0fc6d04f8",
+                "reference": "d725ebd288688bb24f47ee467b1299b0fc6d04f8",
                 "shasum": ""
             },
             "require": {
@@ -376,7 +376,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2025-11-28T12:37:32+00:00"
+            "time": "2026-03-11T20:11:17+00:00"
         },
         {
             "name": "lightools/xml",
@@ -707,12 +707,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpstan/phpdoc-parser.git",
-                "reference": "53945a7da9a8b2807e645fa6d1647c247bac20e4"
+                "reference": "4d4ad14907af751b3f924d6083492c2f22a76c00"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstan/phpdoc-parser/zipball/53945a7da9a8b2807e645fa6d1647c247bac20e4",
-                "reference": "53945a7da9a8b2807e645fa6d1647c247bac20e4",
+                "url": "https://api.github.com/repos/phpstan/phpdoc-parser/zipball/4d4ad14907af751b3f924d6083492c2f22a76c00",
+                "reference": "4d4ad14907af751b3f924d6083492c2f22a76c00",
                 "shasum": ""
             },
             "require": {
@@ -747,20 +747,20 @@
                 "issues": "https://github.com/phpstan/phpdoc-parser/issues",
                 "source": "https://github.com/phpstan/phpdoc-parser/tree/2.3.x"
             },
-            "time": "2026-02-19T09:22:24+00:00"
+            "time": "2026-02-26T12:23:26+00:00"
         },
         {
             "name": "riesenia/pohoda",
-            "version": "v1.26.1",
+            "version": "v1.26.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/riesenia/pohoda.git",
-                "reference": "72c7dc98d37875a4546ff1c13d787b4e05808f60"
+                "reference": "9907b433051101a8c90393ea55d2bd9056e8c646"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/riesenia/pohoda/zipball/72c7dc98d37875a4546ff1c13d787b4e05808f60",
-                "reference": "72c7dc98d37875a4546ff1c13d787b4e05808f60",
+                "url": "https://api.github.com/repos/riesenia/pohoda/zipball/9907b433051101a8c90393ea55d2bd9056e8c646",
+                "reference": "9907b433051101a8c90393ea55d2bd9056e8c646",
                 "shasum": ""
             },
             "require": {
@@ -797,9 +797,9 @@
             "description": "Pohoda XML communication",
             "support": {
                 "issues": "https://github.com/riesenia/pohoda/issues",
-                "source": "https://github.com/riesenia/pohoda/tree/v1.26.1"
+                "source": "https://github.com/riesenia/pohoda/tree/v1.26.3"
             },
-            "time": "2026-01-16T15:20:48+00:00"
+            "time": "2026-02-23T14:48:50+00:00"
         },
         {
             "name": "symfony/deprecation-contracts",
@@ -1035,12 +1035,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/yaml.git",
-                "reference": "ede97ef47f1c1b814e787d7739e4ee8317a271d9"
+                "reference": "c486b83e049b97dad9c8d2d700916000b8bd4899"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/yaml/zipball/ede97ef47f1c1b814e787d7739e4ee8317a271d9",
-                "reference": "ede97ef47f1c1b814e787d7739e4ee8317a271d9",
+                "url": "https://api.github.com/repos/symfony/yaml/zipball/c486b83e049b97dad9c8d2d700916000b8bd4899",
+                "reference": "c486b83e049b97dad9c8d2d700916000b8bd4899",
                 "shasum": ""
             },
             "require": {
@@ -1051,7 +1051,8 @@
                 "symfony/console": "<7.4"
             },
             "require-dev": {
-                "symfony/console": "^7.4|^8.0"
+                "symfony/console": "^7.4|^8.0",
+                "yaml/yaml-test-suite": "*"
             },
             "default-branch": true,
             "bin": [
@@ -1103,7 +1104,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-02-14T11:35:47+00:00"
+            "time": "2026-02-24T18:10:12+00:00"
         },
         {
             "name": "vitexsoftware/ease-core",
@@ -1172,30 +1173,30 @@
         },
         {
             "name": "vitexsoftware/pohoda-connector",
-            "version": "0.10.0",
+            "version": "0.11.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/VitexSoftware/PHP-Pohoda-Connector.git",
-                "reference": "83b203829bc8de54e693457569c6823b3821e183"
+                "reference": "ec804bedb96f44baf717cb568389b94bc2af6fef"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/VitexSoftware/PHP-Pohoda-Connector/zipball/83b203829bc8de54e693457569c6823b3821e183",
-                "reference": "83b203829bc8de54e693457569c6823b3821e183",
+                "url": "https://api.github.com/repos/VitexSoftware/PHP-Pohoda-Connector/zipball/ec804bedb96f44baf717cb568389b94bc2af6fef",
+                "reference": "ec804bedb96f44baf717cb568389b94bc2af6fef",
                 "shasum": ""
             },
             "require": {
                 "ext-curl": "*",
                 "ext-iconv": "*",
                 "lightools/xml": "^2.0|^3.0",
-                "riesenia/pohoda": "^1.23",
-                "vitexsoftware/ease-core": "^1.48",
+                "riesenia/pohoda": "^1.25",
+                "vitexsoftware/ease-core": "^1.49",
                 "vitexsoftware/pohodaser": "^0.1"
             },
             "require-dev": {
-                "ergebnis/composer-normalize": "^2.47",
-                "ergebnis/php-cs-fixer-config": "^6.49",
-                "friendsofphp/php-cs-fixer": "3.82.2",
+                "ergebnis/composer-normalize": "^2.48",
+                "ergebnis/php-cs-fixer-config": "^6.55",
+                "friendsofphp/php-cs-fixer": "3.88.2",
                 "phpstan/phpstan": "*",
                 "phpunit/phpunit": "*"
             },
@@ -1218,7 +1219,7 @@
             "description": "Stormware's Pohoda mServer client.",
             "support": {
                 "issues": "https://github.com/VitexSoftware/PHP-Pohoda-Connector/issues",
-                "source": "https://github.com/VitexSoftware/PHP-Pohoda-Connector/tree/0.10.0"
+                "source": "https://github.com/VitexSoftware/PHP-Pohoda-Connector/tree/0.11.0"
             },
             "funding": [
                 {
@@ -1226,7 +1227,7 @@
                     "type": "patreon"
                 }
             ],
-            "time": "2025-07-24T09:29:59+00:00"
+            "time": "2026-03-21T11:58:42+00:00"
         },
         {
             "name": "vitexsoftware/pohodaser",
