@@ -13,10 +13,11 @@ This project integrates the Pohoda accounting system with the Realpad CRM system
 ## Requirements
 
 - PHP 8.1 or higher
-- Composer
 - Curl extension enabled in PHP
-- Access to Pohoda and Realpad systems
+- Access to Pohoda mServer and Realpad systems
 - Valid Realpad API credentials
+
+When installed via the `.deb` package, all PHP dependencies are managed as system packages — no Composer is required at runtime.
 
 ## Configuration
 
@@ -90,13 +91,21 @@ See the full list of ready-to-run applications within the MultiFlexi platform on
 
 ## Debian/Ubuntu installation
 
-Please use the .deb packages. The repository is availble:
+Please use the `.deb` packages. The package installs system PHP libraries directly (no `composer install` required at runtime) and ships an AppStream metainfo entry so the tool appears in software catalogues.
 
- ```shell
-    echo "deb http://repo.vitexsoftware.com $(lsb_release -sc) main" | sudo tee /etc/apt/sources.list.d/vitexsoftware.list
-    sudo wget -O /etc/apt/trusted.gpg.d/vitexsoftware.gpg http://repo.vitexsoftware.com/keyring.gpg
-    sudo apt update
-    sudo apt install pohoda-realpad
+Add the VitexSoftware repository and install:
+
+```shell
+echo "deb http://repo.vitexsoftware.com $(lsb_release -sc) main" | sudo tee /etc/apt/sources.list.d/vitexsoftware.list
+sudo wget -O /etc/apt/trusted.gpg.d/vitexsoftware.gpg http://repo.vitexsoftware.com/keyring.gpg
+sudo apt update
+sudo apt install pohoda-realpad
+```
+
+For MultiFlexi integration install the additional package:
+
+```shell
+sudo apt install multiflexi-pohoda-realpad
 ```
 
 ## Exit Codes
