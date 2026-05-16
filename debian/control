@@ -8,7 +8,9 @@ Build-Depends:
  php-curl,
  php-xml,
  php-mbstring,
- composer-debian,
+ jq,
+ appstream,
+ help2man,
 Standards-Version: 4.7.0
 Homepage: https://github.com/Spoje-NET/pohoda-realpad
 Rules-Requires-Root: no
@@ -25,6 +27,7 @@ Depends:
  php-curl,
  php-xml,
  php-mbstring,
+ composer,
  php-vitexsoftware-pohoda-connector
 Description: Integration tool for Pohoda and Realpad systems
  Pohoda-Realpad is a PHP-based integration tool that synchronizes bank movements

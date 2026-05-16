@@ -1,0 +1,44 @@
+.TH POHODA-BANK-TO-REALPAD 1 "" "pohoda-realpad" "User Commands"
+.SH NAME
+pohoda\-bank\-to\-realpad \- synchronize bank movements from Pohoda to Realpad
+.SH SYNOPSIS
+.B pohoda\-bank\-to\-realpad
+[\fB\-e\fR \fIENV_FILE\fR]
+[\fB\-o\fR \fIOUTPUT_FILE\fR]
+.SH DESCRIPTION
+Fetches bank movements with a variable symbol from the Pohoda accounting system
+and posts them to the Realpad CRM API. The result report is written as JSON to
+the output file (or stdout by default).
+.SH OPTIONS
+.TP
+.BR \-e ", " \-\-environment =\fIENV_FILE\fR
+Path to the environment file containing connection credentials.
+.TP
+.BR \-o ", " \-\-output =\fIOUTPUT_FILE\fR
+Output file for the JSON result report. Defaults to stdout.
+.SH ENVIRONMENT
+.TP
+.B POHODA_URL
+URL of the Pohoda mServer instance.
+.TP
+.B POHODA_USERNAME
+Pohoda mServer username.
+.TP
+.B POHODA_PASSWORD
+Pohoda mServer password.
+.TP
+.B REALPAD_USERNAME
+Realpad API username.
+.TP
+.B REALPAD_PASSWORD
+Realpad API password.
+.TP
+.B REALPAD_PROJECT_ID
+Realpad project identifier.
+.TP
+.B REALPAD_POHODA_WS
+Override URL for the Realpad payments endpoint.
+.SH SEE ALSO
+.BR pohoda\-bank\-to\-realpad (1)
+.SH AUTHOR
+Vítězslav Dvořák <info@vitexsoftware.cz>

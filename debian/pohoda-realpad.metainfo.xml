@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="console-application">
+  <id>cz.vitexsoftware.pohoda-realpad</id>
+  <metadata_license>MIT</metadata_license>
+  <project_license>MIT</project_license>
+  <name>pohoda-realpad</name>
+  <summary>Integration tool for Pohoda and Realpad systems</summary>
+  <description>
+    <p>
+      Pohoda-Realpad synchronizes bank movements and payments between the Pohoda
+      accounting system and the Realpad CRM system. It fetches bank records with
+      a variable symbol from Pohoda mServer and posts them to the Realpad API.
+    </p>
+    <p>Features:</p>
+    <ul>
+      <li>Synchronizes bank movements and payments</li>
+      <li>Integrates with Realpad API for seamless data exchange</li>
+      <li>Outputs a structured JSON report compatible with MultiFlexi</li>
+    </ul>
+  </description>
+  <icon type="stock">pohoda-realpad</icon>
+  <provides>
+    <binary>pohoda-bank-to-realpad</binary>
+  </provides>
+  <url type="homepage">https://github.com/Spoje-NET/pohoda-realpad</url>
+  <url type="bugtracker">https://github.com/Spoje-NET/pohoda-realpad/issues</url>
+  <developer id="cz.vitexsoftware">
+    <name>Spoje.Net IT s.r.o.</name>
+  </developer>
+  <content_rating type="oars-1.1"/>
+</component>
