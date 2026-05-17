@@ -11,7 +11,7 @@ done
 
 for file in $(ls /usr/lib/pohoda-realpad/multiflexi/*.credprototype.json )
 do
-	multiflexi-cli crprototype import-json --file $file
+	multiflexi-cli credential-prototype:import-json --file $file
 done
 
 #DEBHELPER#
