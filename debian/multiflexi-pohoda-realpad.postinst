@@ -6,7 +6,7 @@ set -e
 
 for file in $(ls /usr/lib/pohoda-realpad/multiflexi/*.app.json)
 do
-	multiflexi-cli application import-json --file $file
+	multiflexi-cli application:import-json --file $file
 done
 
 for file in $(ls /usr/lib/pohoda-realpad/multiflexi/*.credprototype.json )
