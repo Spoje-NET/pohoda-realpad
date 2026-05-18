@@ -23,15 +23,15 @@ override_dh_install:
 	    debian/pohoda-realpad/usr/lib/pohoda-realpad/pohoda-bank-to-realpad.php
 	sed -i "s|\.\./\.env||g" \
 	    debian/pohoda-realpad/usr/lib/pohoda-realpad/pohoda-bank-to-realpad.php
-	sed -i "1a defined('APP_NAME') || define('APP_NAME', '$(PKG_SOURCE)');" \
-	    debian/pohoda-realpad/usr/lib/pohoda-realpad/autoload.php
 	sed -i "s|'unknown'|'$(PKG_SOURCE)'|" \
 	    debian/pohoda-realpad/usr/lib/pohoda-realpad/autoload.php
 	sed -i "s|'0.0.0'|'$(PKG_VERSION)'|" \
 	    debian/pohoda-realpad/usr/lib/pohoda-realpad/autoload.php
 	sed -i "s|'library'|'$(PKG_TYPE)'|g" \
 	    debian/pohoda-realpad/usr/lib/pohoda-realpad/autoload.php
-	sed -i "2a defined('APP_VERSION') || define('APP_VERSION', '$(PKG_VERSION)');" \
+	sed -i "3a defined('APP_NAME') || define('APP_NAME', '$(PKG_SOURCE)');" \
+	    debian/pohoda-realpad/usr/lib/pohoda-realpad/autoload.php
+	sed -i "4a defined('APP_VERSION') || define('APP_VERSION', '$(PKG_VERSION)');" \
 	    debian/pohoda-realpad/usr/lib/pohoda-realpad/autoload.php
 	jq '.version = "$(PKG_VERSION)"' multiflexi/pohoda-bank-to-realpad.app.json > \
 	    debian/multiflexi-pohoda-realpad/usr/lib/pohoda-realpad/multiflexi/pohoda-bank-to-realpad.app.json
