@@ -60,6 +60,7 @@ try {
     $report['status'] = 'error';
     $report['message'] = sprintf(_('Connection error: %s'), $e->getMessage());
     $report['metrics']['http_response_code'] = 0;
+    $banker->addStatusMessage(sprintf(_('Unreachable destination: %s'), $banker->url), 'error');
     $banker->addStatusMessage($report['message'], 'error');
     $exitcode = 1;
 }
@@ -166,6 +167,7 @@ if ($isOnline) {
     $report['message'] = $banker->lastResponseMessage ?: _('Pohoda connection failed');
     $report['artifacts']['pohoda_endpoint'] = [$banker->curlInfo['url'] ?? 'unknown'];
     $report['metrics']['http_response_code'] = $banker->lastResponseCode ?: 0;
+    $banker->addStatusMessage(sprintf(_('Unreachable destination: %s'), $banker->url), 'error');
     $banker->addStatusMessage($report['message'], 'error');
     $exitcode = $banker->lastResponseCode ?: 1;
 }

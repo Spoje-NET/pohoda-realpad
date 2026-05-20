@@ -8,7 +8,7 @@ This project integrates the Pohoda accounting system with the Realpad CRM system
 
 - **Bank Movements Synchronization**: Extracts bank movements from Pohoda and filters them based on specific criteria.
 - **Realpad API Integration**: Sends filtered payments to the Realpad system using their API.
-- **Error Handling and Logging**: Provides detailed status messages and logs for every synchronization attempt.
+- **Error Handling and Logging**: Provides detailed status messages and logs for every synchronization attempt, including the unreachable host/IP:port when a connection timeout occurs.
 
 ## Requirements
 

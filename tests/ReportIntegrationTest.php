@@ -47,6 +47,7 @@ class ReportIntegrationTest extends TestCase
         $this->validateMultiFlexiReport($errorReport);
         $this->assertEquals('error', $errorReport['status']);
         $this->assertStringContainsString('Could not resolve host', $errorReport['message']);
+        $this->assertNotEmpty($errorReport['artifacts']['pohoda_endpoint'], 'Error report must include pohoda_endpoint artifact for unreachable destination');
 
         // Test 2: Mixed scenario (Pohoda success, Realpad error)
         $mixedReport = [

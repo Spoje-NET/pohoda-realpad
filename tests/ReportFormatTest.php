@@ -128,6 +128,39 @@ class ReportFormatTest extends TestCase
     }
 
     /**
+     * Test that connection error messages include the unreachable destination.
+     */
+    public function testConnectionErrorIncludesUnreachableDestination(): void
+    {
+        $pohodaUrl = 'http://192.168.1.10:5336';
+
+        $unreachableMsg = sprintf('Unreachable destination: %s', $pohodaUrl);
+        $this->assertStringContainsString($pohodaUrl, $unreachableMsg);
+        $this->assertStringStartsWith('Unreachable destination:', $unreachableMsg);
+
+        $report = [
+            'status' => 'error',
+            'timestamp' => (new \DateTime())->format(\DateTime::ATOM),
+            'message' => 'Connection error: Curl Error (HTTP 0): Connection timed out after 30001 milliseconds',
+            'artifacts' => [
+                'realpad_endpoint' => ['https://cms.realpad.eu/ws/v10/add-payments-pohoda'],
+                'pohoda_endpoint' => [$pohodaUrl],
+            ],
+            'metrics' => [
+                'payments_processed' => 0,
+                'http_response_code' => 0,
+                'pohoda_records_found' => 0,
+                'exit_code' => 1,
+            ],
+        ];
+
+        $this->assertEquals('error', $report['status']);
+        $this->assertArrayHasKey('pohoda_endpoint', $report['artifacts']);
+        $this->assertStringContainsString($pohodaUrl, $report['artifacts']['pohoda_endpoint'][0]);
+        $this->assertStringContainsString('Connection timed out', $report['message']);
+    }
+
+    /**
      * Test warning report format.
      */
     public function testWarningReportFormat(): void
