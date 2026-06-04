@@ -56,7 +56,7 @@ class ReportIntegrationTest extends TestCase
             'message' => 'Unexpected HTTP code: 404. Response: Not Found',
             'artifacts' => [
                 'realpad_endpoint' => ['http://localhost/pohoda-realpad/tests/realpad-mock.php'],
-                'pohoda_xml' => ['/tmp/Bankovni_doklady.xml'],
+                'pohoda_xml' => ['/tmp/Bankovni_doklady_6abf12.xml'],
                 'realpad_response' => ['/tmp/realpad_response_abc123.txt'],
             ],
             'metrics' => [
@@ -79,7 +79,7 @@ class ReportIntegrationTest extends TestCase
             'message' => 'Payment registered successfully. ID: mock-payment-id-1234',
             'artifacts' => [
                 'realpad_endpoint' => ['http://localhost/pohoda-realpad/tests/realpad-mock.php'],
-                'pohoda_xml' => ['/tmp/Bankovni_doklady.xml'],
+                'pohoda_xml' => ['/tmp/Bankovni_doklady_6abf12.xml'],
                 'realpad_response' => ['/tmp/realpad_response_def456.txt'],
             ],
             'metrics' => [
@@ -102,7 +102,7 @@ class ReportIntegrationTest extends TestCase
             'message' => 'Payment already exists. ID: mock-existing-payment-1234',
             'artifacts' => [
                 'realpad_endpoint' => ['http://localhost/pohoda-realpad/tests/realpad-mock.php'],
-                'pohoda_xml' => ['/tmp/Bankovni_doklady.xml'],
+                'pohoda_xml' => ['/tmp/Bankovni_doklady_6abf12.xml'],
                 'realpad_response' => ['/tmp/realpad_response_ghi789.txt'],
             ],
             'metrics' => [

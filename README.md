@@ -9,6 +9,7 @@ This project integrates the Pohoda accounting system with the Realpad CRM system
 - **Bank Movements Synchronization**: Extracts bank movements from Pohoda and filters them based on specific criteria.
 - **Realpad API Integration**: Sends filtered payments to the Realpad system using their API.
 - **Error Handling and Logging**: Provides detailed status messages and logs for every synchronization attempt, including the unreachable host/IP:port when a connection timeout occurs.
+- **Concurrent Execution Safe**: Each run uses a uniquely named temporary file (`tempnam()`), preventing race conditions when multiple jobs run in parallel.
 
 ## Requirements
 
@@ -64,7 +65,7 @@ The application generates reports in the [MultiFlexi format](https://raw.githubu
     "message": "Payment registered successfully. ID: 12345",
     "artifacts": {
         "realpad_endpoint": ["https://cms.realpad.eu/ws/v10/add-payments-pohoda"],
-        "pohoda_xml": ["/tmp/Bankovni_doklady.xml"],
+        "pohoda_xml": ["/tmp/Bankovni_doklady_6abf12.xml"],
         "realpad_response": ["/tmp/realpad_response_abc123.txt"]
     },
     "metrics": {

@@ -69,7 +69,7 @@ if ($isOnline) {
     $bankListResult = $banker->getBankList("BV.ParSym IS NOT NULL AND BV.ParSym <> ''");
     $report['metrics']['pohoda_records_found'] = \is_array($bankListResult) ? \count($bankListResult) : 0;
 
-    $outxml = sys_get_temp_dir().'/Bankovni_doklady.xml';
+    $outxml = tempnam(sys_get_temp_dir(), 'Bankovni_doklady_').'.xml';
 
     $saved = file_put_contents($outxml, $banker->lastCurlResponse);
 

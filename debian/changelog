@@ -1,3 +1,11 @@
+pohoda-realpad (0.2.5) UNRELEASED; urgency=medium
+
+  [ Vítězslav Dvořák ]
+  * Fix race condition: use tempnam() for unique temp XML filename so
+    concurrent MultiFlexi job runs no longer share /tmp/Bankovni_doklady.xml
+
+ -- Vítězslav Dvořák <info@vitexsoftware.cz>  Wed, 04 Jun 2026 14:02:05 +0200
+
 pohoda-realpad (0.2.4) UNRELEASED; urgency=medium
 
   [ Vítězslav Dvořák ]

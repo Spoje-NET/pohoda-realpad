@@ -34,7 +34,7 @@ class ReportFormatTest extends TestCase
             'message' => 'Payment registered successfully',
             'artifacts' => [
                 'realpad_endpoint' => ['https://cms.realpad.eu/ws/v10/add-payments-pohoda'],
-                'pohoda_xml' => ['/tmp/Bankovni_doklady.xml'],
+                'pohoda_xml' => ['/tmp/Bankovni_doklady_6abf12.xml'],
                 'realpad_response' => ['/tmp/realpad_response_abc123.txt'],
             ],
             'metrics' => [
@@ -161,6 +161,23 @@ class ReportFormatTest extends TestCase
     }
 
     /**
+     * Test that temporary XML files use unique names to prevent concurrent-run conflicts.
+     */
+    public function testTempXmlFileIsUnique(): void
+    {
+        $first = tempnam(sys_get_temp_dir(), 'Bankovni_doklady_').'.xml';
+        $second = tempnam(sys_get_temp_dir(), 'Bankovni_doklady_').'.xml';
+
+        $this->assertNotEquals($first, $second, 'Each run must produce a unique temp filename');
+        $this->assertStringContainsString('Bankovni_doklady_', $first);
+        $this->assertStringStartsWith(sys_get_temp_dir(), $first);
+
+        // Clean up
+        @unlink($first);
+        @unlink($second);
+    }
+
+    /**
      * Test warning report format.
      */
     public function testWarningReportFormat(): void
@@ -171,7 +188,7 @@ class ReportFormatTest extends TestCase
             'message' => 'Payment already exists. ID: mock-existing-payment-id-1234',
             'artifacts' => [
                 'realpad_endpoint' => ['https://cms.realpad.eu/ws/v10/add-payments-pohoda'],
-                'pohoda_xml' => ['/tmp/Bankovni_doklady.xml'],
+                'pohoda_xml' => ['/tmp/Bankovni_doklady_6abf12.xml'],
                 'realpad_response' => ['/tmp/realpad_response_def456.txt'],
             ],
             'metrics' => [
