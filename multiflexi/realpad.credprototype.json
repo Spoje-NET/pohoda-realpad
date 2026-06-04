@@ -11,20 +11,7 @@
   },
   "fields": [
     {
-      "keyword": "REALPAD_API_URL",
-      "name": {
-        "en": "Realpad API URL",
-        "cs": "URL Realpad API"
-      },
-      "type": "string",
-      "description": {
-        "en": "The base URL for the Realpad API.",
-        "cs": "Základní URL pro Realpad API."
-      },
-      "required": false
-    },
-    {
-      "keyword": "REALPAD_API_USERNAME",
+      "keyword": "REALPAD_USERNAME",
       "name": {
         "en": "Realpad API Username",
         "cs": "Uživatelské jméno Realpad API"
@@ -37,7 +24,7 @@
       "required": true
     },
     {
-      "keyword": "REALPAD_API_PASSWORD",
+      "keyword": "REALPAD_PASSWORD",
       "name": {
         "en": "Realpad API Password",
         "cs": "Heslo Realpad API"

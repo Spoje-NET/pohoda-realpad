@@ -10,6 +10,10 @@
     "en": "Synchronizes bank movements from Pohoda to Realpad CRM.",
     "cs": "Synchronizuje bankovní pohyby z Pohody do CRM Realpad."
   },
+  "requirements": [
+    "realpad",
+    "mserver"
+  ],
   "version": "1.0.0",
   "tags": [
     "Pohoda",
