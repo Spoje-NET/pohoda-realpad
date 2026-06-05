@@ -1,4 +1,5 @@
 {
+  "$schema": "https://raw.githubusercontent.com/VitexSoftware/php-vitexsoftware-multiflexi-core/refs/heads/main/schema/credential-prototype.json",
   "uuid": "48f09877-37a0-48a7-8f5b-0d66b26c8efd",
   "code": "Realpad",
   "name": {
@@ -36,5 +37,11 @@
       },
       "required": true
     }
+  ],
+  "homepage": "https://www.realpad.eu/",
+  "tags": [
+    "Realpad",
+    "real-estate",
+    "CRM"
   ]
 }
