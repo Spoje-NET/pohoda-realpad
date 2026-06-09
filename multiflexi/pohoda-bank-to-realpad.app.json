@@ -1,6 +1,6 @@
 {
   "$schema": "https://raw.githubusercontent.com/VitexSoftware/php-vitexsoftware-multiflexi-core/refs/heads/main/multiflexi.app.schema.json",
-  "schemaVersion": "3.1.0",
+  "schemaVersion": "3.4.0",
   "uuid": "51f04e80-13f9-49e7-a161-9ebca69e9ca1",
   "name": {
     "en": "Pohoda Bank to Realpad",
@@ -11,7 +11,6 @@
     "cs": "Synchronizuje bankovní pohyby z Pohody do CRM Realpad."
   },
   "requirements": [
-    "realpad",
     "mserver"
   ],
   "version": "1.0.0",
@@ -26,6 +25,19 @@
   "image": "",
   "ociimage": "ghcr.io/spoje-net/pohoda-realpad:latest",
   "executable": "/usr/bin/pohoda-bank-to-realpad",
+  "events": {
+    "consumes": {
+      "bank.statement.downloaded": {
+        "description": "A bank statement file was downloaded",
+        "format": "file"
+      }
+    },
+    "emits": {
+      "file.uploaded": {
+        "description": "A file was uploaded to an external store"
+      }
+    }
+  },
   "environment": {
     "DEBUG": {
       "type": "bool",
@@ -202,8 +214,5 @@
       "severity": "error",
       "retry": true
     }
-  },
-  "requirements": [
-    "mserver"
-  ]
+  }
 }
