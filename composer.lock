@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "074927c20070e0794df56220c3042003",
+    "content-hash": "0e00ef88c21acae1e5261e1338b3700f",
     "packages": [
         {
             "name": "doctrine/instantiator",
@@ -3275,16 +3275,16 @@
         },
         {
             "name": "friendsofphp/php-cs-fixer",
-            "version": "v3.95.13",
+            "version": "v3.95.15",
             "source": {
                 "type": "git",
                 "url": "https://github.com/PHP-CS-Fixer/PHP-CS-Fixer.git",
-                "reference": "ea941114a002eb5e5876f190223deec1066c482c"
+                "reference": "3e47e5d50046f87e3244acde2fe655d1a3b72555"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PHP-CS-Fixer/PHP-CS-Fixer/zipball/ea941114a002eb5e5876f190223deec1066c482c",
-                "reference": "ea941114a002eb5e5876f190223deec1066c482c",
+                "url": "https://api.github.com/repos/PHP-CS-Fixer/PHP-CS-Fixer/zipball/3e47e5d50046f87e3244acde2fe655d1a3b72555",
+                "reference": "3e47e5d50046f87e3244acde2fe655d1a3b72555",
                 "shasum": ""
             },
             "require": {
@@ -3324,7 +3324,7 @@
                 "php-coveralls/php-coveralls": "^2.9.1",
                 "php-cs-fixer/phpunit-constraint-isidenticalstring": "^1.8",
                 "php-cs-fixer/phpunit-constraint-xmlmatchesxsd": "^1.8",
-                "phpunit/phpunit": "^9.6.35 || ^10.5.64 || ^11.5.56",
+                "phpunit/phpunit": "^9.6.35 || ^10.5.64 || ^11.5.56 || ^12.5.31",
                 "symfony/polyfill-php85": "^1.38",
                 "symfony/var-dumper": "^5.4.48 || ^6.4.36 || ^7.4.8 || ^8.1.0",
                 "symfony/yaml": "^5.4.53 || ^6.4.41 || ^7.4.13 || ^8.1.0"
@@ -3368,7 +3368,7 @@
             ],
             "support": {
                 "issues": "https://github.com/PHP-CS-Fixer/PHP-CS-Fixer/issues",
-                "source": "https://github.com/PHP-CS-Fixer/PHP-CS-Fixer/tree/v3.95.13"
+                "source": "https://github.com/PHP-CS-Fixer/PHP-CS-Fixer/tree/v3.95.15"
             },
             "funding": [
                 {
@@ -3376,7 +3376,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2026-07-10T09:23:21+00:00"
+            "time": "2026-07-15T09:51:47+00:00"
         },
         {
             "name": "justinrainbow/json-schema",
@@ -5343,12 +5343,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/diff.git",
-                "reference": "50df71631a441197e679a56899bfd58abf010956"
+                "reference": "ca49dcd3d5d8b80df1fe88220e009b4c725cd960"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/diff/zipball/50df71631a441197e679a56899bfd58abf010956",
-                "reference": "50df71631a441197e679a56899bfd58abf010956",
+                "url": "https://api.github.com/repos/sebastianbergmann/diff/zipball/ca49dcd3d5d8b80df1fe88220e009b4c725cd960",
+                "reference": "ca49dcd3d5d8b80df1fe88220e009b4c725cd960",
                 "shasum": ""
             },
             "require": {
@@ -5415,7 +5415,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-07-08T14:46:55+00:00"
+            "time": "2026-07-19T15:48:58+00:00"
         },
         {
             "name": "sebastian/environment",
@@ -6283,12 +6283,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/console.git",
-                "reference": "9df1ce79867b238f61acf009787b970180c1c0c2"
+                "reference": "8ffa54b9055ed532012f9be2853d840d4f2eae12"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/console/zipball/9df1ce79867b238f61acf009787b970180c1c0c2",
-                "reference": "9df1ce79867b238f61acf009787b970180c1c0c2",
+                "url": "https://api.github.com/repos/symfony/console/zipball/8ffa54b9055ed532012f9be2853d840d4f2eae12",
+                "reference": "8ffa54b9055ed532012f9be2853d840d4f2eae12",
                 "shasum": ""
             },
             "require": {
@@ -6376,7 +6376,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-07-10T09:33:47+00:00"
+            "time": "2026-07-19T21:03:32+00:00"
         },
         {
             "name": "symfony/event-dispatcher",
@@ -7497,12 +7497,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/string.git",
-                "reference": "5aae2a1d467551d0aeb3de88825fff7fed20f381"
+                "reference": "12c1d4fb1445b0669a4da6c6024df7dc79864e05"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/string/zipball/5aae2a1d467551d0aeb3de88825fff7fed20f381",
-                "reference": "5aae2a1d467551d0aeb3de88825fff7fed20f381",
+                "url": "https://api.github.com/repos/symfony/string/zipball/12c1d4fb1445b0669a4da6c6024df7dc79864e05",
+                "reference": "12c1d4fb1445b0669a4da6c6024df7dc79864e05",
                 "shasum": ""
             },
             "require": {
@@ -7580,7 +7580,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-06-27T21:05:00+00:00"
+            "time": "2026-07-19T19:49:09+00:00"
         },
         {
             "name": "theseer/tokenizer",
@@ -7640,5 +7640,5 @@
     "prefer-lowest": false,
     "platform": {},
     "platform-dev": {},
-    "plugin-api-version": "2.6.0"
+    "plugin-api-version": "2.9.0"
 }
