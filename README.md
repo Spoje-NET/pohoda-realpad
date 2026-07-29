@@ -1,6 +1,8 @@
 # Pohoda-Realpad Integration
 
 ![logo](pohoda-realpad.svg?raw=true)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+![Packaging: deb](https://img.shields.io/badge/packaging-.deb-red?logo=debian&logoColor=white)
 
 This project integrates the Pohoda accounting system with the Realpad CRM system, enabling seamless synchronization of bank movements and payments.
 
