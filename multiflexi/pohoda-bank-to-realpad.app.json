@@ -69,6 +69,46 @@
       "required": false,
       "category": "Behavior"
     },
+    "POHODA_ICO": {
+      "type": "string",
+      "description": {
+        "en": "Organization Number for Pohoda",
+        "cs": "IČO organizace pro Pohodu"
+      },
+      "defval": "12345678",
+      "required": true,
+      "category": "API"
+    },
+    "POHODA_URL": {
+      "type": "string",
+      "description": {
+        "en": "URL of the mServer API",
+        "cs": "URL API mServer"
+      },
+      "defval": "http://pohoda:40000",
+      "required": true,
+      "category": "API"
+    },
+    "POHODA_USERNAME": {
+      "type": "string",
+      "description": {
+        "en": "Username for the mServer API",
+        "cs": "Uživatelské jméno pro API mServer"
+      },
+      "defval": "winstrom",
+      "required": true,
+      "category": "API"
+    },
+    "POHODA_PASSWORD": {
+      "type": "password",
+      "description": {
+        "en": "Password for the mServer API",
+        "cs": "Heslo pro API mServer"
+      },
+      "defval": "pohoda",
+      "required": true,
+      "category": "Security"
+    },
     "POHODA_TIMEOUT": {
       "type": "integer",
       "description": {
@@ -98,6 +138,26 @@
       "defval": "False",
       "required": false,
       "category": "API"
+    },
+    "POHODA_SECONDARY_USERNAME": {
+      "type": "string",
+      "description": {
+        "en": "Username for writing December data in January (previous year)",
+        "cs": "Uživatelské jméno pro zápis prosincových dat v lednu (předchozí rok)"
+      },
+      "defval": "winstrom2",
+      "required": false,
+      "category": "API"
+    },
+    "POHODA_SECONDARY_PASSWORD": {
+      "type": "password",
+      "description": {
+        "en": "Password for writing December data in January (previous year)",
+        "cs": "Heslo pro zápis prosincových dat v lednu (předchozí rok)"
+      },
+      "defval": "pohoda2",
+      "required": false,
+      "category": "Security"
     },
     "REALPAD_USERNAME": {
       "type": "string",
