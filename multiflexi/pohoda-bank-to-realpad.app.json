@@ -11,7 +11,8 @@
     "cs": "Synchronizuje bankovní pohyby z Pohody do CRM Realpad."
   },
   "requirements": [
-    "MServer"
+    "MServer",
+    "Realpad"
   ],
   "version": "1.0.0",
   "tags": [

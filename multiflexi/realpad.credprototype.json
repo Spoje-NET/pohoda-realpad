@@ -10,6 +10,7 @@
     "en": "Credentials required to access the Realpad API.",
     "cs": "Přihlašovací údaje potřebné pro přístup k Realpad API."
   },
+  "version": "1.0",
   "fields": [
     {
       "keyword": "REALPAD_USERNAME",
