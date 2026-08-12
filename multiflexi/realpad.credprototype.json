@@ -11,6 +11,7 @@
     "cs": "Přihlašovací údaje potřebné pro přístup k Realpad API."
   },
   "version": "1.0",
+  "logo": "Realpad.svg",
   "fields": [
     {
       "keyword": "REALPAD_USERNAME",
