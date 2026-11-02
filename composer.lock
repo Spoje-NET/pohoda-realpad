@@ -81,12 +81,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/lexer.git",
-                "reference": "200aa4fbd2df429ad49fcee637f05d44c32c2d17"
+                "reference": "7a378be1fc09acf38fcce6ceb8d7fc1b648f7607"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/lexer/zipball/200aa4fbd2df429ad49fcee637f05d44c32c2d17",
-                "reference": "200aa4fbd2df429ad49fcee637f05d44c32c2d17",
+                "url": "https://api.github.com/repos/doctrine/lexer/zipball/7a378be1fc09acf38fcce6ceb8d7fc1b648f7607",
+                "reference": "7a378be1fc09acf38fcce6ceb8d7fc1b648f7607",
                 "shasum": ""
             },
             "require": {
@@ -94,8 +94,8 @@
             },
             "require-dev": {
                 "doctrine/coding-standard": "^14",
-                "phpstan/phpstan": "^1.10",
-                "phpunit/phpunit": "^10.5.58"
+                "phpstan/phpstan": "^2",
+                "phpunit/phpunit": "^10.5.58 || ^12.5.4"
             },
             "type": "library",
             "autoload": {
@@ -148,7 +148,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-01-24T20:53:36+00:00"
+            "time": "2026-10-01T18:58:38+00:00"
         },
         {
             "name": "goetas-webservices/xsd2php-runtime",
@@ -282,12 +282,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/schmittjoh/serializer.git",
-                "reference": "43bd8f471107281f1f5f0c9ee4393866874f6a9b"
+                "reference": "0d13b9e906fada052246106740a2e5d2cc45b554"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/schmittjoh/serializer/zipball/43bd8f471107281f1f5f0c9ee4393866874f6a9b",
-                "reference": "43bd8f471107281f1f5f0c9ee4393866874f6a9b",
+                "url": "https://api.github.com/repos/schmittjoh/serializer/zipball/0d13b9e906fada052246106740a2e5d2cc45b554",
+                "reference": "0d13b9e906fada052246106740a2e5d2cc45b554",
                 "shasum": ""
             },
             "require": {
@@ -377,7 +377,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2026-04-24T22:03:25+00:00"
+            "time": "2026-10-29T04:13:01+00:00"
         },
         {
             "name": "lightools/xml",
@@ -547,12 +547,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/pear/Mail_Mime.git",
-                "reference": "cda56082cc1a3722d6929caa66abfe95b7406e12"
+                "reference": "babc8022681c1be5ee7c031ad45abb14a1e26ee9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pear/Mail_Mime/zipball/cda56082cc1a3722d6929caa66abfe95b7406e12",
-                "reference": "cda56082cc1a3722d6929caa66abfe95b7406e12",
+                "url": "https://api.github.com/repos/pear/Mail_Mime/zipball/babc8022681c1be5ee7c031ad45abb14a1e26ee9",
+                "reference": "babc8022681c1be5ee7c031ad45abb14a1e26ee9",
                 "shasum": ""
             },
             "require": {
@@ -591,7 +591,7 @@
                 "issues": "http://pear.php.net/bugs/search.php?cmd=display&package_name[]=Mail_Mime",
                 "source": "https://github.com/pear/Mail_Mime"
             },
-            "time": "2026-08-08T07:08:35+00:00"
+            "time": "2026-10-29T13:26:25+00:00"
         },
         {
             "name": "pear/pear-core-minimal",
@@ -704,16 +704,16 @@
         },
         {
             "name": "phpstan/phpdoc-parser",
-            "version": "2.3.x-dev",
+            "version": "2.4.x-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpstan/phpdoc-parser.git",
-                "reference": "326f797be0a3c8c50cbc844362b36dd7b8678421"
+                "reference": "af8e840551031d254cfdb3a18a62c3470a309c10"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstan/phpdoc-parser/zipball/326f797be0a3c8c50cbc844362b36dd7b8678421",
-                "reference": "326f797be0a3c8c50cbc844362b36dd7b8678421",
+                "url": "https://api.github.com/repos/phpstan/phpdoc-parser/zipball/af8e840551031d254cfdb3a18a62c3470a309c10",
+                "reference": "af8e840551031d254cfdb3a18a62c3470a309c10",
                 "shasum": ""
             },
             "require": {
@@ -746,22 +746,22 @@
             "description": "PHPDoc parser with support for nullable, intersection and generic types",
             "support": {
                 "issues": "https://github.com/phpstan/phpdoc-parser/issues",
-                "source": "https://github.com/phpstan/phpdoc-parser/tree/2.3.x"
+                "source": "https://github.com/phpstan/phpdoc-parser/tree/2.4.x"
             },
-            "time": "2026-07-22T06:50:52+00:00"
+            "time": "2026-10-30T19:36:28+00:00"
         },
         {
             "name": "riesenia/pohoda",
-            "version": "v1.26.4",
+            "version": "v1.27.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/riesenia/pohoda.git",
-                "reference": "094ca7578dcf9316d0dddbe4a2853edc15779436"
+                "reference": "2cd888ac81eae490c9fd202d05c21cdffe48a0c9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/riesenia/pohoda/zipball/094ca7578dcf9316d0dddbe4a2853edc15779436",
-                "reference": "094ca7578dcf9316d0dddbe4a2853edc15779436",
+                "url": "https://api.github.com/repos/riesenia/pohoda/zipball/2cd888ac81eae490c9fd202d05c21cdffe48a0c9",
+                "reference": "2cd888ac81eae490c9fd202d05c21cdffe48a0c9",
                 "shasum": ""
             },
             "require": {
@@ -798,9 +798,9 @@
             "description": "Pohoda XML communication",
             "support": {
                 "issues": "https://github.com/riesenia/pohoda/issues",
-                "source": "https://github.com/riesenia/pohoda/tree/v1.26.4"
+                "source": "https://github.com/riesenia/pohoda/tree/v1.27.0"
             },
-            "time": "2026-05-14T11:48:53+00:00"
+            "time": "2026-09-02T10:01:39+00:00"
         },
         {
             "name": "symfony/deprecation-contracts",
@@ -808,12 +808,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/deprecation-contracts.git",
-                "reference": "f3202fa1b5097b0af062dc978b32ecf63404e31d"
+                "reference": "feb1edf4e546af3b85c5caebe8359a20db230ca3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/deprecation-contracts/zipball/f3202fa1b5097b0af062dc978b32ecf63404e31d",
-                "reference": "f3202fa1b5097b0af062dc978b32ecf63404e31d",
+                "url": "https://api.github.com/repos/symfony/deprecation-contracts/zipball/feb1edf4e546af3b85c5caebe8359a20db230ca3",
+                "reference": "feb1edf4e546af3b85c5caebe8359a20db230ca3",
                 "shasum": ""
             },
             "require": {
@@ -827,7 +827,7 @@
                     "name": "symfony/contracts"
                 },
                 "branch-alias": {
-                    "dev-main": "3.7-dev"
+                    "dev-main": "3.8-dev"
                 }
             },
             "autoload": {
@@ -872,7 +872,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-06-05T06:23:12+00:00"
+            "time": "2026-09-16T14:15:10+00:00"
         },
         {
             "name": "symfony/options-resolver",
@@ -880,12 +880,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/options-resolver.git",
-                "reference": "779fd603a0a0653f29dfef130c01a410d6494086"
+                "reference": "6c54d178f3ba9f95dca6eb4544a79c0fa447a532"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/options-resolver/zipball/779fd603a0a0653f29dfef130c01a410d6494086",
-                "reference": "779fd603a0a0653f29dfef130c01a410d6494086",
+                "url": "https://api.github.com/repos/symfony/options-resolver/zipball/6c54d178f3ba9f95dca6eb4544a79c0fa447a532",
+                "reference": "6c54d178f3ba9f95dca6eb4544a79c0fa447a532",
                 "shasum": ""
             },
             "require": {
@@ -924,7 +924,7 @@
                 "options"
             ],
             "support": {
-                "source": "https://github.com/symfony/options-resolver/tree/8.1"
+                "source": "https://github.com/symfony/options-resolver/tree/8.2"
             },
             "funding": [
                 {
@@ -944,7 +944,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-06-05T06:23:12+00:00"
+            "time": "2026-10-28T08:10:05+00:00"
         },
         {
             "name": "symfony/polyfill-ctype",
@@ -1036,12 +1036,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/yaml.git",
-                "reference": "efa40e544b1499e4e943feadde7b9df85214befd"
+                "reference": "5ebae649f09e0bc97214f3a90cda3ab4fe034cbd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/yaml/zipball/efa40e544b1499e4e943feadde7b9df85214befd",
-                "reference": "efa40e544b1499e4e943feadde7b9df85214befd",
+                "url": "https://api.github.com/repos/symfony/yaml/zipball/5ebae649f09e0bc97214f3a90cda3ab4fe034cbd",
+                "reference": "5ebae649f09e0bc97214f3a90cda3ab4fe034cbd",
                 "shasum": ""
             },
             "require": {
@@ -1049,10 +1049,11 @@
                 "symfony/polyfill-ctype": "^1.8"
             },
             "conflict": {
-                "symfony/console": "<7.4"
+                "symfony/console": "<8.2"
             },
             "require-dev": {
-                "symfony/console": "^7.4|^8.0",
+                "opis/json-schema": "^2.6",
+                "symfony/console": "^8.2",
                 "yaml/yaml-test-suite": "*"
             },
             "default-branch": true,
@@ -1105,7 +1106,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-07-22T15:42:36+00:00"
+            "time": "2026-11-01T19:30:44+00:00"
         },
         {
             "name": "vitexsoftware/ease-core",
@@ -1174,30 +1175,30 @@
         },
         {
             "name": "vitexsoftware/pohoda-connector",
-            "version": "0.11.0",
+            "version": "v0.11.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/VitexSoftware/PHP-Pohoda-Connector.git",
-                "reference": "ec804bedb96f44baf717cb568389b94bc2af6fef"
+                "reference": "30b47d27d1d1892a76a1f6bf57ff58d595d7684f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/VitexSoftware/PHP-Pohoda-Connector/zipball/ec804bedb96f44baf717cb568389b94bc2af6fef",
-                "reference": "ec804bedb96f44baf717cb568389b94bc2af6fef",
+                "url": "https://api.github.com/repos/VitexSoftware/PHP-Pohoda-Connector/zipball/30b47d27d1d1892a76a1f6bf57ff58d595d7684f",
+                "reference": "30b47d27d1d1892a76a1f6bf57ff58d595d7684f",
                 "shasum": ""
             },
             "require": {
                 "ext-curl": "*",
                 "ext-iconv": "*",
                 "lightools/xml": "^2.0|^3.0",
-                "riesenia/pohoda": "^1.25",
-                "vitexsoftware/ease-core": "^1.49",
+                "riesenia/pohoda": "^1.26",
+                "vitexsoftware/ease-core": "^1.50",
                 "vitexsoftware/pohodaser": "^0.1"
             },
             "require-dev": {
                 "ergebnis/composer-normalize": "^2.48",
-                "ergebnis/php-cs-fixer-config": "^6.55",
-                "friendsofphp/php-cs-fixer": "3.88.2",
+                "ergebnis/php-cs-fixer-config": "^6.60",
+                "friendsofphp/php-cs-fixer": "3.95.11",
                 "phpstan/phpstan": "*",
                 "phpunit/phpunit": "*"
             },
@@ -1220,7 +1221,7 @@
             "description": "Stormware's Pohoda mServer client.",
             "support": {
                 "issues": "https://github.com/VitexSoftware/PHP-Pohoda-Connector/issues",
-                "source": "https://github.com/VitexSoftware/PHP-Pohoda-Connector/tree/0.11.0"
+                "source": "https://github.com/VitexSoftware/PHP-Pohoda-Connector/tree/v0.11.1"
             },
             "funding": [
                 {
@@ -1228,7 +1229,7 @@
                     "type": "patreon"
                 }
             ],
-            "time": "2026-03-21T11:58:42+00:00"
+            "time": "2026-10-30T13:14:17+00:00"
         },
         {
             "name": "vitexsoftware/pohodaser",
@@ -6952,12 +6953,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-php80.git",
-                "reference": "dfb55726c3a76ea3b6459fcfda1ec2d80a682411"
+                "reference": "9c6a5d6b01ca51d486c813e9a9c0ed55f208bb74"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-php80/zipball/dfb55726c3a76ea3b6459fcfda1ec2d80a682411",
-                "reference": "dfb55726c3a76ea3b6459fcfda1ec2d80a682411",
+                "url": "https://api.github.com/repos/symfony/polyfill-php80/zipball/9c6a5d6b01ca51d486c813e9a9c0ed55f208bb74",
+                "reference": "9c6a5d6b01ca51d486c813e9a9c0ed55f208bb74",
                 "shasum": ""
             },
             "require": {
@@ -7029,7 +7030,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-04-10T16:19:22+00:00"
+            "time": "2026-09-25T15:50:05+00:00"
         },
         {
             "name": "symfony/polyfill-php81",
@@ -7644,5 +7645,5 @@
     "prefer-lowest": false,
     "platform": {},
     "platform-dev": {},
-    "plugin-api-version": "2.6.0"
+    "plugin-api-version": "2.9.0"
 }
