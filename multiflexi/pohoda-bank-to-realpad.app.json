@@ -176,7 +176,7 @@
         "en": "Realpad API password",
         "cs": "Heslo pro API Realpad"
       },
-      "defval": "realpad",
+      "defval": "",
       "required": true,
       "category": "Security"
     },
